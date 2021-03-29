@@ -22,8 +22,8 @@ const CampaignList = (props) => {
                 </Card.Body>
                 {props.pending && (
                   <Card.Body className="text-center">
-                    <Card.Link href="#">Approve</Card.Link>
-                    <Card.Link href="#">Deny</Card.Link>
+                    <Card.Link>Approve</Card.Link>
+                    <Card.Link>Deny</Card.Link>
                   </Card.Body>
                 )}
                 <Card.Footer>

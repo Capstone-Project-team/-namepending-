@@ -10,7 +10,10 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) => {
-        if (test) {
+        if (
+          auth.user.userType === "student" ||
+          auth.user.userType === "admin"
+        ) {
           return <Component {...props} />
         } else {
           return (

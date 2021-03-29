@@ -35,13 +35,22 @@ const Register = () => {
   const userInfo = authContext.auth
   console.log(userInfo)
 
-  const handleLogin = (creds, { setSubmitting }) => {
+  /*const handleLogin = (creds, { setSubmitting }) => {
     const submit = async () => {
       loginUser(authContext.dispatch, creds)
       setTimeout(() => {
         console.log("login")
         setSubmitting(false)
         history.push("/home")
+      }, 2000)
+    }
+    submit()
+  }*/
+  const handleRegister = (creds, { setSubmitting }) => {
+    const submit = async () => {
+      setTimeout(() => {
+        setSubmitting(false)
+        console.log(creds)
       }, 2000)
     }
     submit()
@@ -53,7 +62,7 @@ const Register = () => {
         <h1>Register</h1>
         <Formik
           validationSchema={schema}
-          onSubmit={handleLogin}
+          onSubmit={handleRegister}
           initialValues={{
             firstname: "",
             lastname: "",

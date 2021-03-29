@@ -34,7 +34,11 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/campaign/:id" component={CampaignShow}></Route>
-          <Route exact path="/campaign/:id/donate" component={Donate}></Route>
+          <ProtectedRoute
+            exact
+            path="/campaign/:id/donate"
+            component={Donate}
+          ></ProtectedRoute>
           <ProtectedRoute path={ROUTES.HOME} component={Home} />
           <ProtectedRoute path={ROUTES.NEW_CAMPAIGN} component={NewCampaign} />
           <ProtectedRoute path={ROUTES.PENDING} component={Pending} />

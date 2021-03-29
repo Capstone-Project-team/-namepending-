@@ -1,4 +1,5 @@
 //TODO request/response for login
+
 //if login succesful call login-success
 export const loginUser = async (dispatch, payload) => {
   dispatch({ type: "login-success", payload })
@@ -8,4 +9,6 @@ export const loginUser = async (dispatch, payload) => {
 //then remove user from localStorage?
 export const logoutUser = async (dispatch) => {
   dispatch({ type: "logout" })
+  localStorage.removeItem("user")
+  localStorage.removeItem("token")
 }

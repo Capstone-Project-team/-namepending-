@@ -4,6 +4,7 @@ import { Form, Button, Spinner } from "react-bootstrap"
 import { Formik } from "formik"
 import * as yup from "yup"
 import LandingNavbar from "./LandingNavbar"
+import axios from "axios"
 
 import { loginUser, useAuthContext } from "../../context"
 
@@ -16,34 +17,32 @@ const schema = yup.object().shape({
     .required("Required"),
 })
 
+const baseUrl = "/api/login"
 const Login = (props) => {
   const history = useHistory()
   const authContext = useAuthContext()
   const userInfo = authContext.auth
   console.log(userInfo)
 
-  /* Handle login example
-    const handleLogin = async (e) => {
-        e.preventDefault()
-        let payload = {name, email}
-        try {
-            let response = await loginUser(dispatch, payload) //loginUser action makes the request and handles all the neccessary state changes
-            if (!response.user) return
-            props.history.push('/dashboard') //navigate to dashboard on success
-        } catch (error) {
-            console.log(error)
-        }
-    }
-  */
-
   const handleLogin = (creds, { setSubmitting }) => {
     const submit = async () => {
-      loginUser(authContext.dispatch, creds)
-      setTimeout(() => {
-        console.log("login")
+      try {
+        console.log(creds)
+
+        const response = await axios.post(baseUrl, {
+          email: "email",
+          password: "password",
+        })
+        const data = response.data
+        console.log(data)
+        /*localStorage.setItem("user", JSON.stringify(data))
+        localStorage.setItem("token", "fakeToken")
+        loginUser(authContext.dispatch, data)
         setSubmitting(false)
-        history.push("/home")
-      }, 2000)
+        history.push("/home")*/
+      } catch {
+        console.log("error")
+      }
     }
     submit()
   }

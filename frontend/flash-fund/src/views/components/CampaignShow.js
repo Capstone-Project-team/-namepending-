@@ -13,12 +13,15 @@ import {
 import { Redirect, useHistory } from "react-router"
 import cards from "../../fakeData"
 import UserNavbar from "../components/UserNavbar"
+import { useAuthContext } from "../../context"
+import LandingNavbar from "./LandingNavbar"
 
 const fakeText =
   "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action."
 
 const CampaignShow = (props) => {
   const [donate, setDonate] = useState(false)
+  const auth = useAuthContext().auth
   const history = useHistory()
   console.log(props)
   const { id } = props.match.params
@@ -26,12 +29,15 @@ const CampaignShow = (props) => {
   const card = cards.find((card) => card.id === Number(id))
   console.log(card.image)
   if (donate) {
-    return <Redirect push to={`/campaign/${card.id}/donate`} />
+    if (auth.user.email) {
+      return <Redirect push to={`/campaign/${card.id}/donate`} />
+    }
+    return <Redirect push to={"/login"} />
     //history.push(`/campaign/${card.id}/donate`)
   }
   return (
     <>
-      <UserNavbar />
+      {auth.user.email ? <UserNavbar /> : <LandingNavbar />}
       <Container className="py-4">
         <Card
           className="text-center m-auto"

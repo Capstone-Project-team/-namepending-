@@ -1,0 +1,11 @@
+{
+  "name": "json-server-test",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "devDependencies": {
+    "faker": "^5.5.0",
+    "json-server": "^0.16.3"
+  }
+}

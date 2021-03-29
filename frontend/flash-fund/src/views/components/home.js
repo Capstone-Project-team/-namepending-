@@ -11,13 +11,13 @@ const Home = (...props) => {
   const authContext = useAuthContext()
   let button = null
 
-  if (authContext.auth.userType === "student") {
+  if (authContext.auth.user.userType === "student") {
     button = (
       <Link to="/new-campaign">
         <Button className="mb-3">Create New Campaign</Button>
       </Link>
     )
-  } else if (authContext.auth.userType === "admin") {
+  } else if (authContext.auth.user.userType === "admin") {
     button = (
       <Link to="/pending">
         <Button className="mb-3">Pending Requests</Button>
@@ -31,7 +31,7 @@ const Home = (...props) => {
       <Container className="my-4">
         <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>
         {button}
-        <h1 className="text-center">Campaigns from my school</h1>
+        <h1 className="text-center">Campaigns</h1>
       </Container>
       <CampaignList cards={cards} />
     </div>

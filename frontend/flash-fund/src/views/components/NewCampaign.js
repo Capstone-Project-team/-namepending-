@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { Container, Form, Col, InputGroup, Button } from "react-bootstrap"
 import UserNavbar from "./UserNavbar"
@@ -14,13 +14,15 @@ const schema = yup.object().shape({
     .max(6, "can't request more than $99,999")
     .required(),
   date_End: yup.date().required(),
-  name: yup.string().min(5).max(24).required(),
-  fundraiser_description: yup.string().min(20).required(),
+  name: yup.string().min(4).max(24).required(),
+  fundraiser_description: yup.string().min(5).required(),
   terms: yup.bool().required().oneOf([true], "Terms must be accepted"),
 })
 const NewCampaign = () => {
+  const [state, setState] = useState(false)
   const handleCampaign = (creds) => {
     console.log(creds)
+    setState(true)
   }
 
   const handleAmountChange = (e, setFieldValue) => {
@@ -144,6 +146,7 @@ const NewCampaign = () => {
                 />
               </Form.Group>
               <Button type="submit">Create Campaign</Button>
+              {state && <pre>{JSON.stringify(values, null, 2)}</pre>}
             </Form>
           )}
         </Formik>

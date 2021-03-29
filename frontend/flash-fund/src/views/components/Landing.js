@@ -1,17 +1,23 @@
 import React from "react"
-import { useHistory } from "react-router-dom"
+import { Redirect, useHistory } from "react-router-dom"
 import * as ROUTES from "../../routes/routes"
 import { Card, CardDeck, Col, Container, Jumbotron, Row } from "react-bootstrap"
 import LandingNavbar from "./LandingNavbar"
 import CampaignList from "./CampaignList"
+import { useAuthContext } from "../../context"
 
 import cards from "../../fakeData"
 const Landing = () => {
+  const authContext = useAuthContext()
   const history = useHistory()
+  if (authContext.auth.user.email) {
+    return <Redirect to="/home" />
+  }
   return (
     <div>
       <LandingNavbar />
       <Container className="my-4">
+        <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>
         <Jumbotron className="text-center">
           <h1>Welcome to Flash Fund</h1>
         </Jumbotron>
