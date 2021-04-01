@@ -23,6 +23,19 @@
       "email": "carol@gmail.com",
       "password": "password",
       "accountType": "donor"
+    },
+    {
+      "firstname": "dfdsf",
+      "lastname": "fdsafds",
+      "email": "iankush1317@gmail.com",
+      "password": "asdfgh"
+    },
+    {
+      "firstname": "dfdsf",
+      "lastname": "fdsafds",
+      "email": "iankush1317@gmail.com",
+      "password": "asdfgh"
     }
-  ]
+  ],
+  "campaigns": []
 }

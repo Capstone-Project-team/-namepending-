@@ -6,6 +6,7 @@ import * as yup from "yup"
 import { Formik } from "formik"
 import { loginUser, useAuthContext } from "../../context"
 import { useHistory } from "react-router-dom"
+import axios from "axios"
 
 const schema = yup.object().shape({
   email: yup.string().email("Invalid email").required("Required"),
@@ -29,29 +30,43 @@ const schema = yup.object().shape({
     .oneOf([yup.ref("password"), null], "Passwords must match")
     .required("Passwords must match"),
 })
+
+const baseUrl = "/api/user"
 const Register = () => {
   const history = useHistory()
   const authContext = useAuthContext()
   const userInfo = authContext.auth
   console.log(userInfo)
 
-  /*const handleLogin = (creds, { setSubmitting }) => {
-    const submit = async () => {
-      loginUser(authContext.dispatch, creds)
-      setTimeout(() => {
-        console.log("login")
-        setSubmitting(false)
-        history.push("/home")
-      }, 2000)
-    }
-    submit()
-  }*/
   const handleRegister = (creds, { setSubmitting }) => {
     const submit = async () => {
-      setTimeout(() => {
+      const { firstname, lastname, email, password } = creds
+      try {
+        const response = await axios.post(
+          baseUrl,
+          {
+            firstname,
+            lastname,
+            email,
+            password,
+          },
+          {
+            "content-type": "application/json",
+            "access-control-allow-origin": "*",
+          }
+        )
+        console.log(response)
         setSubmitting(false)
-        console.log(creds)
-      }, 2000)
+        /*if (response.data) {
+          //localStorage.setItem("user", JSON.stringify(data))
+          //localStorage.setItem("token", "fakeToken")
+          //loginUser(authContext.dispatch, data)
+          history.push("/login")
+        }*/
+      } catch (err) {
+        console.log(err.response.data.message)
+        setSubmitting(false)
+      }
     }
     submit()
   }

@@ -1,0 +1,202 @@
+{
+  "campaigns": [
+    {
+      "id": 26918358,
+      "date_start": "Tue Mar 30 2021 17:32:55 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 02:50:15 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "5d9a3425-e67a-69ed-35e2-8b360ebd83d7",
+      "approval_bool": false,
+      "funding_goal": 2111,
+      "funding_raised": 2139
+    },
+    {
+      "id": 86762408,
+      "date_start": "Tue Mar 30 2021 18:52:25 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 06:19:54 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "8ec34bd2-4198-0658-f9fb-794324004409",
+      "approval_bool": false,
+      "funding_goal": 2108,
+      "funding_raised": 518
+    },
+    {
+      "id": 54533774,
+      "date_start": "Tue Mar 30 2021 15:38:21 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 05:39:49 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "04a98b4f-398b-db57-ced5-628840dab3b5",
+      "approval_bool": false,
+      "funding_goal": 4291,
+      "funding_raised": 2478
+    },
+    {
+      "id": 59607175,
+      "date_start": "Wed Mar 31 2021 06:34:26 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 00:01:30 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "cd550cc0-f7a0-7c98-c4e7-0813d5a84382",
+      "approval_bool": false,
+      "funding_goal": 1903,
+      "funding_raised": 1906
+    },
+    {
+      "id": 3069498,
+      "date_start": "Wed Mar 31 2021 04:59:59 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 01:05:19 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "b6857516-45cb-a373-993d-5810afab407e",
+      "approval_bool": true,
+      "funding_goal": 3201,
+      "funding_raised": 1413
+    },
+    {
+      "id": 91466219,
+      "date_start": "Tue Mar 30 2021 22:00:49 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Wed Mar 31 2021 20:40:43 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "b6a6896a-225c-b373-8371-91b261f847e4",
+      "approval_bool": true,
+      "funding_goal": 1659,
+      "funding_raised": 2214
+    },
+    {
+      "id": 36181692,
+      "date_start": "Tue Mar 30 2021 23:50:50 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Wed Mar 31 2021 15:05:31 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "e92ea2e3-3f58-a7f2-83a9-220926a1d749",
+      "approval_bool": false,
+      "funding_goal": 4426,
+      "funding_raised": 504
+    },
+    {
+      "id": 28782226,
+      "date_start": "Wed Mar 31 2021 09:54:28 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Wed Mar 31 2021 22:09:08 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "c773e31a-39d1-fdf7-2ac8-c2765728d986",
+      "approval_bool": false,
+      "funding_goal": 4186,
+      "funding_raised": 998
+    },
+    {
+      "id": 73126632,
+      "date_start": "Wed Mar 31 2021 06:06:26 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Wed Mar 31 2021 14:01:01 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "3103bb15-2c87-644a-fc65-3bf85cfe4607",
+      "approval_bool": true,
+      "funding_goal": 2031,
+      "funding_raised": 1599
+    },
+    {
+      "id": 8085321,
+      "date_start": "Wed Mar 31 2021 02:59:21 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 09:48:53 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "e86ed187-dcb5-3d48-2d8e-6e74553dd3f0",
+      "approval_bool": true,
+      "funding_goal": 1524,
+      "funding_raised": 2201
+    },
+    {
+      "id": 29624671,
+      "date_start": "Tue Mar 30 2021 16:07:16 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Wed Mar 31 2021 19:35:59 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "afbe29b2-c825-2c68-be82-1e3d4c195747",
+      "approval_bool": true,
+      "funding_goal": 3590,
+      "funding_raised": 2264
+    },
+    {
+      "id": 42437273,
+      "date_start": "Wed Mar 31 2021 04:31:17 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 08:56:24 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "d24541cf-3f6a-623e-b750-35b32ff10407",
+      "approval_bool": true,
+      "funding_goal": 4540,
+      "funding_raised": 709
+    },
+    {
+      "id": 31388621,
+      "date_start": "Wed Mar 31 2021 06:26:18 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Wed Mar 31 2021 13:48:32 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "cb48ab34-de9e-0d89-ea1a-b03c004e8439",
+      "approval_bool": true,
+      "funding_goal": 3158,
+      "funding_raised": 692
+    },
+    {
+      "id": 80425068,
+      "date_start": "Wed Mar 31 2021 00:53:22 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Wed Mar 31 2021 14:23:33 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "d233a98f-8638-1342-a94c-7aea88bc892a",
+      "approval_bool": true,
+      "funding_goal": 3526,
+      "funding_raised": 2488
+    },
+    {
+      "id": 75425880,
+      "date_start": "Tue Mar 30 2021 13:31:15 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Wed Mar 31 2021 16:27:41 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "12593d71-e40b-f92b-3a70-e83350aae46e",
+      "approval_bool": true,
+      "funding_goal": 4606,
+      "funding_raised": 1205
+    },
+    {
+      "id": 15108042,
+      "date_start": "Wed Mar 31 2021 06:28:29 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 09:13:15 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "5ebe1125-017d-7d8a-0e8b-71934808c387",
+      "approval_bool": true,
+      "funding_goal": 2569,
+      "funding_raised": 669
+    },
+    {
+      "id": 84722805,
+      "date_start": "Tue Mar 30 2021 21:36:05 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 08:45:52 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "f68c3e5b-beeb-0bd0-5596-96dcc7705ae1",
+      "approval_bool": false,
+      "funding_goal": 4017,
+      "funding_raised": 448
+    },
+    {
+      "id": 18413600,
+      "date_start": "Tue Mar 30 2021 21:18:51 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 04:49:51 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "cc4766f4-6156-04b1-9898-8150915211e1",
+      "approval_bool": true,
+      "funding_goal": 3172,
+      "funding_raised": 2111
+    },
+    {
+      "id": 59619306,
+      "date_start": "Wed Mar 31 2021 01:33:08 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 03:14:16 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "8fd66065-861b-3853-b62d-07110670bde7",
+      "approval_bool": false,
+      "funding_goal": 1742,
+      "funding_raised": 838
+    },
+    {
+      "id": 5533000,
+      "date_start": "Wed Mar 31 2021 04:50:31 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 09:10:00 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "4303e91b-25c7-56a6-33a0-ed6221ab8463",
+      "approval_bool": false,
+      "funding_goal": 1220,
+      "funding_raised": 2228
+    },
+    {
+      "id": 37873689,
+      "date_start": "Wed Mar 31 2021 03:29:19 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 08:27:35 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "db0196a6-5bb2-b302-8595-08da520769e3",
+      "approval_bool": true,
+      "funding_goal": 1740,
+      "funding_raised": 1490
+    },
+    {
+      "id": 96439885,
+      "date_start": "Tue Mar 30 2021 13:36:58 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Thu Apr 01 2021 09:03:12 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "afb8d7b7-27cf-b268-90bf-7bfc41174de5",
+      "approval_bool": false,
+      "funding_goal": 998,
+      "funding_raised": 1681
+    }
+  ]
+}

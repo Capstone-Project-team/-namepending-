@@ -1,0 +1,229 @@
+{
+  "users": [
+    {
+      "id": 96285972,
+      "user_id": "e97fda50-9105-376c-b4d1-9f65f4bd74af",
+      "first_name": "Mariela",
+      "last_name": "Fisher",
+      "email": "Mariela_Fisher@kent.edu",
+      "password": "Laura/Laura",
+      "user_type": "student"
+    },
+    {
+      "id": 33569008,
+      "user_id": "e37a7140-ce5f-0c5b-2228-764aa7a32ca6",
+      "first_name": "Daniella",
+      "last_name": "Zieme",
+      "email": "Daniella16@kent.edu",
+      "password": "Emilie",
+      "user_type": "student"
+    },
+    {
+      "id": 51387845,
+      "user_id": "9450f11b-f474-79d4-5d51-4d1b4bee276c",
+      "first_name": "Lydia",
+      "last_name": "Mosciski",
+      "email": "Lydia36@kent.edu",
+      "password": "Maximillian",
+      "user_type": "student"
+    },
+    {
+      "id": 60088996,
+      "user_id": "34f0a569-66ba-1b07-8f71-13c695650446",
+      "first_name": "Merl",
+      "last_name": "McLaughlin",
+      "email": "Merl_McLaughlin24@kent.edu",
+      "password": "Della/Della",
+      "user_type": "student"
+    },
+    {
+      "id": 48828227,
+      "user_id": "d0d489db-113b-a4c0-8cb2-7d693a432e49",
+      "first_name": "Larissa",
+      "last_name": "Kirlin",
+      "email": "Larissa_Kirlin@kent.edu",
+      "password": "Idella",
+      "user_type": "student"
+    },
+    {
+      "id": 62247459,
+      "user_id": "89077d90-373d-99aa-747a-a34fefb0ff7d",
+      "first_name": "Ali",
+      "last_name": "Runte",
+      "email": "Ali.Runte@kent.edu",
+      "password": "Trudie",
+      "user_type": "student"
+    },
+    {
+      "id": 824165,
+      "user_id": "d241a841-a45a-7c5f-8eb7-7b4a9ff73eb5",
+      "first_name": "Deven",
+      "last_name": "Zieme",
+      "email": "Deven_Zieme@kent.edu",
+      "password": "Brayan",
+      "user_type": "student"
+    },
+    {
+      "id": 95768497,
+      "user_id": "01dc8b97-2f43-a2e0-c607-d498881d319e",
+      "first_name": "Pearline",
+      "last_name": "Hamill",
+      "email": "Pearline.Hamill@kent.edu",
+      "password": "Dora=Dora",
+      "user_type": "student"
+    },
+    {
+      "id": 89900988,
+      "user_id": "c914f820-47de-2e0a-8ae6-8cbd98cbc3d5",
+      "first_name": "Lane",
+      "last_name": "Corwin",
+      "email": "Lane.Corwin67@kent.edu",
+      "password": "Rod^Rod",
+      "user_type": "student"
+    },
+    {
+      "id": 94348740,
+      "user_id": "8e616583-7175-17a0-bba1-6c99285b1fef",
+      "first_name": "Aglae",
+      "last_name": "Stamm",
+      "email": "Aglae16@kent.edu",
+      "password": "Marlon",
+      "user_type": "student"
+    },
+    {
+      "id": 69973404,
+      "user_id": "3f8e9efd-603f-03cd-4f46-7cb8e04c7a64",
+      "first_name": "Leif",
+      "last_name": "Prosacco",
+      "email": "Leif.Prosacco@kent.edu",
+      "password": "Salvador",
+      "user_type": "student"
+    },
+    {
+      "id": 12091148,
+      "user_id": "fc6a8afc-0ca3-3220-90cb-2e4a869c32ad",
+      "first_name": "Buck",
+      "last_name": "McClure",
+      "email": "Buck_McClure32@kent.edu",
+      "password": "Wilber",
+      "user_type": "student"
+    },
+    {
+      "id": 45625855,
+      "user_id": "eb1cd0cb-efc0-4966-8fdf-29c68cff3ef0",
+      "first_name": "Thora",
+      "last_name": "Predovic",
+      "email": "Thora77@kent.edu",
+      "password": "Parker",
+      "user_type": "student"
+    },
+    {
+      "id": 76288278,
+      "user_id": "32e262e4-f741-d37d-8154-c1207fd0a770",
+      "first_name": "Diana",
+      "last_name": "Moore",
+      "email": "Diana.Moore23@kent.edu",
+      "password": "Milford",
+      "user_type": "student"
+    },
+    {
+      "id": 87370553,
+      "user_id": "a63e30fb-af47-71a0-e45c-42ffec933df3",
+      "first_name": "Caleb",
+      "last_name": "Schuppe",
+      "email": "Caleb.Schuppe79@kent.edu",
+      "password": "Jacquelyn",
+      "user_type": "student"
+    },
+    {
+      "id": 10532428,
+      "user_id": "d9a06adf-ba08-2723-1ee0-d7aa7e7089df",
+      "first_name": "Jerome",
+      "last_name": "Rodriguez",
+      "email": "Jerome.Rodriguez@kent.edu",
+      "password": "Lauretta",
+      "user_type": "student"
+    },
+    {
+      "id": 26417401,
+      "user_id": "ba2d8497-1325-3337-ec69-bed35c28ebde",
+      "first_name": "Arden",
+      "last_name": "Monahan",
+      "email": "Arden.Monahan20@kent.edu",
+      "password": "Larry Larry",
+      "user_type": "student"
+    },
+    {
+      "id": 75931854,
+      "user_id": "5caef23b-495f-896b-d80f-429c28ec4687",
+      "first_name": "Leslie",
+      "last_name": "Larkin",
+      "email": "Leslie29@kent.edu",
+      "password": "Ebba-Ebba",
+      "user_type": "student"
+    },
+    {
+      "id": 38426883,
+      "user_id": "771e18b1-40a9-3a66-39ba-3da78600f491",
+      "first_name": "Mac",
+      "last_name": "Stiedemann",
+      "email": "Mac60@kent.edu",
+      "password": "Terrill",
+      "user_type": "student"
+    },
+    {
+      "id": 51520679,
+      "user_id": "c0e8a8ca-d725-e86e-9144-25efede4f482",
+      "first_name": "Eugenia",
+      "last_name": "Champlin",
+      "email": "Eugenia.Champlin@kent.edu",
+      "password": "Dianna",
+      "user_type": "student"
+    },
+    {
+      "id": 71320207,
+      "user_id": "33cfe63d-7662-4002-aef9-60c7e587d2e9",
+      "first_name": "Gene",
+      "last_name": "Brown",
+      "email": "Gene_Brown@kent.edu",
+      "password": "Eddie Eddie",
+      "user_type": "student"
+    },
+    {
+      "id": 71429886,
+      "user_id": "afc53e31-7268-5afe-361e-e6db9cbc8263",
+      "first_name": "Rodger",
+      "last_name": "McCullough",
+      "email": "Rodger5@kent.edu",
+      "password": "Alize=Alize",
+      "user_type": "student"
+    },
+    {
+      "id": 93153067,
+      "user_id": "7d67476e-4c55-0903-1a94-59ae7b2cbc19",
+      "first_name": "Gina",
+      "last_name": "Hartmann",
+      "email": "Gina_Hartmann94@kent.edu",
+      "password": "Alvena",
+      "user_type": "student"
+    },
+    {
+      "id": 12420802,
+      "user_id": "fc0ce1a7-83fd-efc5-2c2b-037fb649be8e",
+      "first_name": "August",
+      "last_name": "Beahan",
+      "email": "August77@kent.edu",
+      "password": "Felicity",
+      "user_type": "student"
+    },
+    {
+      "id": 31328328,
+      "user_id": "f622061d-ebc0-be98-006d-b998f7e95cc9",
+      "first_name": "Juliet",
+      "last_name": "Quigley",
+      "email": "Juliet.Quigley87@kent.edu",
+      "password": "Mario@Mario",
+      "user_type": "student"
+    }
+  ]
+}

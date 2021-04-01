@@ -10,13 +10,13 @@ export const initialState = {
 }
 
 export const AuthReducer = (initialState, action) => {
+  console.log("action", action)
   switch (action.type) {
     case "login-success":
       return {
         ...initialState,
         user: {
           email: action.payload.email,
-          password: action.payload.password,
           userType: action.payload.userType,
         },
         token: "fakeToken", //action.payload.token,

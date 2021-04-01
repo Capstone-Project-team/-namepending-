@@ -29,19 +29,25 @@ const Login = (props) => {
       try {
         console.log(creds)
 
-        const response = await axios.post(baseUrl, {
-          email: "email",
-          password: "password",
+        const response = await axios.post(baseUrl, creds, {
+          "access-control-allow-origin": "*",
         })
         const data = response.data
-        console.log(data)
-        /*localStorage.setItem("user", JSON.stringify(data))
-        localStorage.setItem("token", "fakeToken")
-        loginUser(authContext.dispatch, data)
         setSubmitting(false)
-        history.push("/home")*/
-      } catch {
-        console.log("error")
+        console.log(data)
+        const payload = {
+          email: data.email,
+          userType: data.user_type,
+        }
+        if (data) {
+          localStorage.setItem("user", JSON.stringify(payload))
+          localStorage.setItem("token", "fakeToken")
+          loginUser(authContext.dispatch, payload)
+          history.push("/home")
+        }
+      } catch (error) {
+        //console.log("error", error.response.data.error)
+        setSubmitting(false)
       }
     }
     submit()
