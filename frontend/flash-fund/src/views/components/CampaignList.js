@@ -2,6 +2,8 @@ import React from "react"
 import { Container, CardDeck, Row, Card, Col } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
 
+//component to create a grid of cards to show campaings
+//used on landing page and home page
 const CampaignList = (props) => {
   return (
     <Container>
@@ -12,6 +14,7 @@ const CampaignList = (props) => {
               <Card
                 className="mb-3"
                 onClick={(event) =>
+                  //redired to campaign specific page. should be done using react-router useHistory, but can't get it to work correctly
                   (window.location.href = `/campaign/${card.id}`)
                 }
               >

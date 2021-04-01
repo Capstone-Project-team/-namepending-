@@ -1,5 +1,5 @@
-//TODO request/response for login
-
+//functions that will invoke the corresponding reducer to change/update the context state
+//dispatch found in reducer.js
 //if login succesful call login-success
 export const loginUser = async (dispatch, payload) => {
   dispatch({ type: "login-success", payload })

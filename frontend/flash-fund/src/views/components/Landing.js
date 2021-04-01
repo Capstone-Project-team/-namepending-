@@ -6,10 +6,12 @@ import LandingNavbar from "./LandingNavbar"
 import CampaignList from "./CampaignList"
 import { useAuthContext } from "../../context"
 
+//landing page
 import cards from "../../fakeData"
 const Landing = () => {
   const authContext = useAuthContext()
   const history = useHistory()
+  //redirect already logged in users
   if (authContext.auth.user.email) {
     return <Redirect to="/home" />
   }

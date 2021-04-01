@@ -6,11 +6,14 @@ import CampaignList from "./CampaignList"
 import { Link } from "react-router-dom"
 import cards from "../../fakeData"
 
+//home page that displays once user logs in
 const Home = (...props) => {
   console.log(props)
   const authContext = useAuthContext()
   let button = null
 
+  //render a 'create campain' button for student users
+  //render a 'check campaigns that need approval' button for admins
   if (authContext.auth.user.userType === "student") {
     button = (
       <Link to="/new-campaign">

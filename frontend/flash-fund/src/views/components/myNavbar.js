@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { Navbar, Nav, NavDropdown } from "react-bootstrap"
 import "../../assets/css/login.css"
 
+//unused. sample navbar
 const MyNavbar = () => {
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">

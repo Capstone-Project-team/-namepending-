@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { Navbar, Nav } from "react-bootstrap"
 import "../../assets/css/login.css"
 
+//nav bar for already logged in users
 const LandingNavbar = () => {
   return (
     <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">

@@ -6,6 +6,8 @@ import { logoutUser, useAuthContext } from "../../context"
 
 const user = "Ian"
 
+//nav bar that will be used by user who is logged in
+//includes logout button
 const UserNavbar = () => {
   const authContext = useAuthContext()
   const history = useHistory()

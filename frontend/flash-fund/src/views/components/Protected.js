@@ -2,6 +2,9 @@ import React from "react"
 import { Redirect, Route } from "react-router"
 import { useAuthContext } from "../../context"
 
+//protected routes that only logged in users can access
+//if valid then access route
+//if not then redirect to home page
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   const auth = useAuthContext().auth
   const test = true

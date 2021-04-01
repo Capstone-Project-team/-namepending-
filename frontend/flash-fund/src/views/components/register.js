@@ -32,6 +32,8 @@ const schema = yup.object().shape({
 })
 
 const baseUrl = "/api/user"
+
+//register form page
 const Register = () => {
   const history = useHistory()
   const authContext = useAuthContext()

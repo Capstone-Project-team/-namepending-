@@ -19,6 +19,7 @@ import LandingNavbar from "./LandingNavbar"
 const fakeText =
   "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action."
 
+//campaign specific page. Will show after you click on a card
 const CampaignShow = (props) => {
   const [donate, setDonate] = useState(false)
   const auth = useAuthContext().auth
@@ -28,6 +29,8 @@ const CampaignShow = (props) => {
   console.log(id)
   const card = cards.find((card) => card.id === Number(id))
   console.log(card.image)
+  //only logged in user can donate
+  //redirect to homepage, but should display error message
   if (donate) {
     if (auth.user.email) {
       return <Redirect push to={`/campaign/${card.id}/donate`} />

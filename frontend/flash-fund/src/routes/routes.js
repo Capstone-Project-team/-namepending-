@@ -1,3 +1,4 @@
+//list of routes for the web page
 export const LOGIN = "/login"
 export const REGISTER = "/register"
 export const HOME = "/home"

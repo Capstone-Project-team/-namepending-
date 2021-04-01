@@ -18,6 +18,8 @@ const schema = yup.object().shape({
   fundraiser_description: yup.string().min(5).required(),
   terms: yup.bool().required().oneOf([true], "Terms must be accepted"),
 })
+
+//form to create to new campaign posting
 const NewCampaign = () => {
   const [state, setState] = useState(false)
   const handleCampaign = (creds) => {

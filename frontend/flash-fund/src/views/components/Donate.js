@@ -18,6 +18,9 @@ const schema = yup.object().shape({
     })
     .required(),
 })
+
+//puts a comma in the amound of money entered, for example 2,000 | 20,000 | etc
+//makes sure state is only updated on number input. No alphabetic input
 const handleAmountChange = (e, setFieldValue) => {
   const re = /^[0-9\b]+$/
   let value = e.target.value.replace(/,/g, "")
@@ -27,6 +30,7 @@ const handleAmountChange = (e, setFieldValue) => {
   }
 }
 
+//page that accepts donations once the 'donate' button is clicked on a campaign
 const Donate = (props) => {
   const handleDonation = (creds) => {
     console.log(creds)

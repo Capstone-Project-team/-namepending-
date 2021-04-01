@@ -18,6 +18,8 @@ const schema = yup.object().shape({
 })
 
 const baseUrl = "/api/login"
+
+//login from page
 const Login = (props) => {
   const history = useHistory()
   const authContext = useAuthContext()
