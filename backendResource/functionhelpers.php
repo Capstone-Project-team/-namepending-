@@ -26,25 +26,6 @@
         $conn->close();
     }
 
-    // Call right after newrequest. Will make a blank entry for the Donorlist
-    function new_request_Donorlist($author_ID)
-    {
-        global $servername, $dbname;
-        $conn = new mysqli($servername, $dbname);
-        {
-            die('Could not connect: ' . mysqli_error($conn));
-        }
-        
-        $sql = $conn->prepare("INSERT INTO `donorlist` (`Donorlist_ID`, `Request_ID`, `Donor_ID`, `Donation`, `Donation_Date`)
-        VALUES (NULL, NULL, ?, NULL, NULL)");
-
-        if (!$sql->execute()) 
-        {
-           trigger_error('Invalid query: ' . $conn->error);
-        }
-        $conn->close();
-    }
-
     // Catch-all function for checking if the ID is unique to that table. 
     function ID_uniqueCheck($checkID,$checktable)
     {
@@ -153,8 +134,41 @@
     }
 
     // For an admin to approve a request
-    function adminFunc_approve()
+    function adminFunc_approve($request_ID, $Author_ID)
     {
+        global $servername, $dbname;
+        $conn = new mysqli($servername, $dbname);
+        {
+            die('Could not connect: ' . mysqli_error($conn));
+        }
 
+        $sql = $conn->prepare("UPDATE requests SET approval_bool = 1 WHERE request_ID = $request;
+        UPDATE requests SET approval_AdminID = $Author_ID WHERE request_ID = $request;");
+
+        if (!$sql->execute()) 
+        {
+            trigger_error('Invalid query: ' . $conn->error);
+        }
+
+        $conn->close();
+    }
+
+    function adminFunc_approve($request_ID, $Author_ID)
+    {
+        global $servername, $dbname;
+        $conn = new mysqli($servername, $dbname);
+        {
+            die('Could not connect: ' . mysqli_error($conn));
+        }
+
+        $sql = $conn->prepare("UPDATE requests SET approval_bool = 1 WHERE request_ID = $request;
+        UPDATE requests SET approval_AdminID = $Author_ID WHERE request_ID = $request;");
+        
+        if (!$sql->execute()) 
+        {
+            trigger_error('Invalid query: ' . $conn->error);
+        }
+
+        $conn->close();
     }
 ?>
