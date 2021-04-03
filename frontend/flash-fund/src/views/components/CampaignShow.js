@@ -4,8 +4,6 @@ import {
   Card,
   Col,
   Container,
-  Image,
-  Jumbotron,
   ListGroup,
   ListGroupItem,
   Row,
@@ -40,7 +38,7 @@ const CampaignShow = (props) => {
   }
   return (
     <>
-      {auth.user.email ? <UserNavbar /> : <LandingNavbar />}
+      <UserNavbar />
       <Container className="py-4">
         <Card
           className="text-center m-auto"
@@ -66,7 +64,12 @@ const CampaignShow = (props) => {
           <ListGroup className="list-group-flush text-left">
             <ListGroupItem>user</ListGroupItem>
           </ListGroup>
-          <Card.Footer className="text-muted">footer</Card.Footer>
+          <Card.Footer className="text-muted text-left">
+            <Row>
+              <Col>Posted: 8 days ago</Col>
+              <Col className="text-right">Ends in: 6 days</Col>
+            </Row>
+          </Card.Footer>
         </Card>
       </Container>
     </>

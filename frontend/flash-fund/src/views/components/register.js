@@ -4,7 +4,7 @@ import "../../assets/css/login.css"
 import LandingNavbar from "./LandingNavbar"
 import * as yup from "yup"
 import { Formik } from "formik"
-import { loginUser, useAuthContext } from "../../context"
+import { useAuthContext } from "../../context"
 import { useHistory } from "react-router-dom"
 import axios from "axios"
 

@@ -18,35 +18,41 @@ import AdminRoute from "./views/components/AdminRoute"
 import "./assets/css/App.css"
 
 import { AuthProvider, useAuthContext } from "./context"
+import AppHeader from "./views/AppHeader"
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <Switch>
-          <Route exact path={"/"}>
-            <Landing />
-          </Route>
-          <Route exact path={ROUTES.REGISTER}>
-            <Register />
-          </Route>
-          <Route exact path={ROUTES.LOGIN}>
-            <Login />
-          </Route>
-          <Route exact path="/campaign/:id" component={CampaignShow}></Route>
-          <ProtectedRoute
-            exact
-            path="/campaign/:id/donate"
-            component={Donate}
-          ></ProtectedRoute>
-          <ProtectedRoute path={ROUTES.HOME} component={Home} />
-          <ProtectedRoute path={ROUTES.NEW_CAMPAIGN} component={NewCampaign} />
-          <ProtectedRoute path={ROUTES.PENDING} component={Pending} />
-          <Route path="*">
-            <Four0Four />
-          </Route>
-        </Switch>
-      </Router>
+      <AppHeader>
+        <Router>
+          <Switch>
+            <Route exact path={"/"}>
+              <Landing />
+            </Route>
+            <Route exact path={ROUTES.REGISTER}>
+              <Register />
+            </Route>
+            <Route exact path={ROUTES.LOGIN}>
+              <Login />
+            </Route>
+            <Route exact path="/campaign/:id" component={CampaignShow}></Route>
+            <ProtectedRoute
+              exact
+              path="/campaign/:id/donate"
+              component={Donate}
+            ></ProtectedRoute>
+            <ProtectedRoute path={ROUTES.HOME} component={Home} />
+            <ProtectedRoute
+              path={ROUTES.NEW_CAMPAIGN}
+              component={NewCampaign}
+            />
+            <ProtectedRoute path={ROUTES.PENDING} component={Pending} />
+            <Route path="*">
+              <Four0Four />
+            </Route>
+          </Switch>
+        </Router>
+      </AppHeader>
     </AuthProvider>
   )
 }

@@ -1,4 +1,3 @@
-import React, { useState, useReducer } from "react"
 const token = localStorage.getItem("token")
 const user = localStorage.getItem("user")
 
@@ -7,7 +6,7 @@ console.log(user)
 //set initial state of context when page is rendered
 //state is either data from local storage, or blank
 export const initialState = {
-  user: user ? JSON.parse(user) : {},
+  user: user ? JSON.parse(user) : { email: "test", userType: "admin" },
   token: token || "",
 }
 

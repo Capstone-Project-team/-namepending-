@@ -1,14 +1,18 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Redirect, useHistory } from "react-router-dom"
-import * as ROUTES from "../../routes/routes"
-import { Card, CardDeck, Col, Container, Jumbotron, Row } from "react-bootstrap"
+import { Jumbotron, Container } from "react-bootstrap"
 import LandingNavbar from "./LandingNavbar"
 import CampaignList from "./CampaignList"
 import { useAuthContext } from "../../context"
 
 //landing page
 import cards from "../../fakeData"
+import UserNavbar from "./UserNavbar"
 const Landing = () => {
+  useEffect(() => {
+    const topCampaigns = async () => {}
+  })
+  const [top, setTop] = useState(cards)
   const authContext = useAuthContext()
   const history = useHistory()
   //redirect already logged in users
@@ -17,7 +21,7 @@ const Landing = () => {
   }
   return (
     <div>
-      <LandingNavbar />
+      <UserNavbar />
       <Container className="my-4">
         <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>
         <Jumbotron className="text-center">
@@ -25,14 +29,9 @@ const Landing = () => {
         </Jumbotron>
         <h1 className="text-center">Top Campaigns</h1>
       </Container>
-      <CampaignList cards={cards} />
+      <CampaignList cards={top} />
     </div>
   )
 }
 
 export default Landing
-/*
-        <div>Landing</div>
-        <button onClick={() => history.push(ROUTES.LOGIN)}>Login</button>
-        <button onClick={() => history.push(ROUTES.REGISTER)}>Register</button>
-*/

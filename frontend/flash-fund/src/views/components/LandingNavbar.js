@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { Navbar, Nav } from "react-bootstrap"
 import "../../assets/css/login.css"
 
@@ -12,10 +11,7 @@ const LandingNavbar = () => {
       <Navbar.Collapse
         id="responsive-navbar-nav"
         className="justify-content-end"
-      >
-        <Nav.Link href="/login">Login</Nav.Link>
-        <Nav.Link href="/register">Register</Nav.Link>
-      </Navbar.Collapse>
+      ></Navbar.Collapse>
     </Navbar>
   )
 }

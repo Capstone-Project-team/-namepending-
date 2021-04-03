@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import UserNavbar from "./UserNavbar"
 import { useAuthContext } from "../../context"
 import { Container, Button } from "react-bootstrap"
@@ -8,6 +8,7 @@ import cards from "../../fakeData"
 
 //home page that displays once user logs in
 const Home = (...props) => {
+  const [page, setPage] = useState(cards)
   console.log(props)
   const authContext = useAuthContext()
   let button = null
@@ -36,7 +37,7 @@ const Home = (...props) => {
         {button}
         <h1 className="text-center">Campaigns</h1>
       </Container>
-      <CampaignList cards={cards} />
+      <CampaignList cards={page} />
     </div>
   )
 }

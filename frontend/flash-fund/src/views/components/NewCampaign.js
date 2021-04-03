@@ -1,11 +1,12 @@
 import React, { useState } from "react"
 
-import { Container, Form, Col, InputGroup, Button } from "react-bootstrap"
+import { Container, Form, InputGroup, Button } from "react-bootstrap"
 import UserNavbar from "./UserNavbar"
 import { Formik } from "formik"
 import * as yup from "yup"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
+import axios from "axios"
 
 const schema = yup.object().shape({
   funding_Goal: yup
@@ -16,15 +17,30 @@ const schema = yup.object().shape({
   date_End: yup.date().required(),
   name: yup.string().min(4).max(24).required(),
   fundraiser_description: yup.string().min(5).required(),
-  terms: yup.bool().required().oneOf([true], "Terms must be accepted"),
 })
-
+const baseUrl = "/api/campaign"
 //form to create to new campaign posting
 const NewCampaign = () => {
   const [state, setState] = useState(false)
-  const handleCampaign = (creds) => {
-    console.log(creds)
+  const handleCampaign = (creds, { setSubmitting }) => {
     setState(true)
+    const submit = async () => {
+      try {
+        console.log(creds)
+
+        const response = await axios.post(baseUrl, creds, {
+          "access-control-allow-origin": "*",
+          "content-type": "application/json",
+        })
+        const data = response.data
+        setSubmitting(false)
+        console.log(data)
+      } catch (error) {
+        console.log("error", error.response.data.error)
+        setSubmitting(false)
+      }
+    }
+    submit()
   }
 
   const handleAmountChange = (e, setFieldValue) => {
@@ -49,16 +65,13 @@ const NewCampaign = () => {
             name: "",
             funding_Goal: "",
             fundraiser_description: "",
-            terms: false,
           }}
         >
           {({
             handleSubmit,
             handleChange,
-            handleBlur,
             values,
             touched,
-            isValid,
             errors,
             setFieldValue,
           }) => (
@@ -135,17 +148,6 @@ const NewCampaign = () => {
                 <Form.Control.Feedback type="invalid">
                   {errors.fundraiser_description}
                 </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group>
-                <Form.Check
-                  required
-                  name="terms"
-                  label="Agree to terms and conditions"
-                  onChange={handleChange}
-                  isInvalid={touched.terms && !!errors.terms}
-                  feedback={errors.terms}
-                  id="validationFormik0"
-                />
               </Form.Group>
               <Button type="submit">Create Campaign</Button>
               {state && <pre>{JSON.stringify(values, null, 2)}</pre>}

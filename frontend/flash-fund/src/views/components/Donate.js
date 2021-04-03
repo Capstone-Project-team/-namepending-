@@ -69,7 +69,7 @@ const Donate = (props) => {
                     </InputGroup.Prepend>
                     <Form.Control
                       type="text"
-                      placeholder="Funding Goal"
+                      placeholder="0"
                       aria-describedby="inputGroupPrepend"
                       name="funding_Goal"
                       value={values.funding_Goal}

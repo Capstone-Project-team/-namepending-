@@ -7,7 +7,7 @@ import { useAuthContext } from "../../context"
 //if not then redirect to home page
 const ProtectedRoute = ({ component: Component, ...rest }) => {
   const auth = useAuthContext().auth
-  const test = true
+  //const test = true
   console.log("auth", auth)
   return (
     <Route
