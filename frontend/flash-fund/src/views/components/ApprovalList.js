@@ -44,12 +44,15 @@ const ApprovalList = (props) => {
                 >
                   <Card.Img variant="top" src={card.image} />
                   <Card.Body>
-                    <Card.Title className="text-center">
-                      {card.title}
-                    </Card.Title>
-                    <Card.Text>{card.text}</Card.Text>
+                    <Card.Title className="text-left">{card.title}</Card.Title>
+                    <Card.Text
+                      className="overflow-auto"
+                      className={{ maxHeight: "8rem" }}
+                    >
+                      {card.text}
+                    </Card.Text>
                   </Card.Body>
-                  <Card.Body>
+                  <Card.Body className="text-center">
                     {cards.find((r) => r.id === card.id).approved ? (
                       <Card.Text>Approved</Card.Text>
                     ) : (
@@ -74,7 +77,7 @@ const ApprovalList = (props) => {
                     )}
                   </Card.Body>
                   <Card.Footer>
-                    <small className="text-muted">{card.footer}</small>
+                    <small className="text-muted">user</small>
                   </Card.Footer>
                 </Card>
               </Col>

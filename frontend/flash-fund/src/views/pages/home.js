@@ -38,11 +38,12 @@ const Home = (...props) => {
   }
 
   return (
-    <div style={{ background: "#d4d7de" }}>
+    <div>
       <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>
       {button}
       <h1 className="text-center">Campaigns</h1>
       <CampaignList cards={page.card_page} />
+      <br />
       <MyPagination cards={page.cards} pageChange={pageChange} />
     </div>
   )

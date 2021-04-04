@@ -9,7 +9,8 @@ export const initialState = {
   user: user
     ? JSON.parse(user)
     : {
-        /*email: "test", userType: "admin"*/
+        email: "test",
+        userType: "student",
       },
   token: token || "",
 }

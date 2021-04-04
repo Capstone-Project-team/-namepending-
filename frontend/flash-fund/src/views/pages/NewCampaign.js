@@ -1,12 +1,14 @@
 import React, { useState } from "react"
 
-import { Container, Form, InputGroup, Button } from "react-bootstrap"
+import { Spinner, Form, InputGroup, Button, Card } from "react-bootstrap"
 import { Formik } from "formik"
 import * as yup from "yup"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import axios from "axios"
+import handleAmountChange from "../../helpers"
 
+//schema for new campaign posting validation
 const schema = yup.object().shape({
   funding_Goal: yup
     .string()
@@ -18,6 +20,7 @@ const schema = yup.object().shape({
   fundraiser_description: yup.string().min(5).required(),
 })
 const baseUrl = "/api/campaign"
+
 //form to create to new campaign posting
 const NewCampaign = () => {
   const [state, setState] = useState(false)
@@ -25,36 +28,29 @@ const NewCampaign = () => {
     setState(true)
     const submit = async () => {
       try {
-        console.log(creds)
-
         const response = await axios.post(baseUrl, creds, {
           "access-control-allow-origin": "*",
           "content-type": "application/json",
         })
         const data = response.data
         setSubmitting(false)
-        console.log(data)
       } catch (error) {
-        console.log("error", error.response.data.error)
         setSubmitting(false)
       }
     }
     submit()
   }
 
-  const handleAmountChange = (e, setFieldValue) => {
-    const re = /^[0-9\b]+$/
-    let value = e.target.value.replace(/,/g, "")
-    console.log("value", value)
-    if (value === "" || re.test(value)) {
-      console.log("new val", value)
-      setFieldValue("funding_Goal", value.replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-    }
-  }
+  //return form for new campaign posting
   return (
-    <div>
-      <Container>
-        <br />
+    <Card
+      style={{
+        //maxWidth: "50rem",
+        boxShadow: "none",
+        transform: "none",
+      }}
+    >
+      <Card.Body>
         <Formik
           validationSchema={schema}
           onSubmit={handleCampaign}
@@ -72,6 +68,7 @@ const NewCampaign = () => {
             touched,
             errors,
             setFieldValue,
+            isSubmitting,
           }) => (
             <Form noValidate onSubmit={handleSubmit}>
               <Form.Group md="4" controlId="fundraiserName">
@@ -120,7 +117,10 @@ const NewCampaign = () => {
                     aria-describedby="inputGroupPrepend"
                     name="funding_Goal"
                     value={values.funding_Goal}
-                    onChange={(e) => handleAmountChange(e, setFieldValue)}
+                    onChange={(e) => {
+                      const val = handleAmountChange(e)
+                      if (val !== undefined) setFieldValue("funding_Goal", val)
+                    }}
                     isInvalid={touched.funding_Goal && !!errors.funding_Goal}
                   />
                   <Form.Control.Feedback type="invalid">
@@ -147,13 +147,19 @@ const NewCampaign = () => {
                   {errors.fundraiser_description}
                 </Form.Control.Feedback>
               </Form.Group>
-              <Button type="submit">Create Campaign</Button>
+              <Button variant="primary" type="submit" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <Spinner as="span" animation="border" />
+                ) : (
+                  "Create Campaign"
+                )}
+              </Button>
               {state && <pre>{JSON.stringify(values, null, 2)}</pre>}
             </Form>
           )}
         </Formik>
-      </Container>
-    </div>
+      </Card.Body>
+    </Card>
   )
 }
 

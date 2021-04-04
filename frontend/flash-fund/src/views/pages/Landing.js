@@ -18,7 +18,13 @@ const Landing = () => {
     return <Redirect to="/home" />
   }
   return (
-    <div style={{ background: "#d4d7de" }}>
+    <div
+      style={
+        {
+          /*background: "#d4d7de" */
+        }
+      }
+    >
       <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>
       <Jumbotron
         style={{

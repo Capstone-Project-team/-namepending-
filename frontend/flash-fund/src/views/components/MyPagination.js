@@ -3,12 +3,10 @@ import { Pagination } from "react-bootstrap"
 import _ from "lodash"
 
 const MyPagination = ({ cards, pageChange }) => {
-  //cards = _.range(1, 10)
-
   const updatePage = (page) => {
     const currentPage = page
     const totalCards = cards.length
-    const pageSize = 12
+    const pageSize = 3
     const totalPages = Math.ceil(cards.length / pageSize)
 
     const indexOfLast = currentPage * pageSize

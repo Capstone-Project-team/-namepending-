@@ -22,7 +22,7 @@ const UserNavbar = (props) => {
       expand="lg"
       style={{ background: "#242a36" }}
     >
-      <Navbar.Brand href="/home">
+      <Navbar.Brand href="/home" style={{ color: "#e3d03b" }}>
         <img
           src="/logo192.png"
           width="30"
@@ -39,8 +39,10 @@ const UserNavbar = (props) => {
       >
         {authContext.auth.user.email ? (
           <>
-            <Navbar.Text>User: {authContext.auth.user.email} </Navbar.Text>
-            <Nav navbar>
+            <Navbar.Text className="mx-4" style={{ color: "#e3d03b" }}>
+              User: {authContext.auth.user.email}{" "}
+            </Navbar.Text>
+            <Nav>
               <Button onClick={handleLogout}>Logout</Button>
             </Nav>
           </>
