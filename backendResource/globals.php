@@ -1,6 +1,7 @@
-// globals here
-<?php
-$servername = "localhost:3306"
-$dbname = "mrtwinsister"
 
+<?php
+$servername = "localhost:3306";
+$dbname = "mrtwinsister";
+$username = "root";
+$password = "";
 ?>
