@@ -1,5 +1,11 @@
 # -FlashFund-
 
+## Environment Set Up
+
+- Have NPM and Node.js installed
+- Clone dev repo
+- Run `npm install` in `/frontend/flash-fund` to get packages needed to run app
+
 ## Script to run dev client and backend together
 
 On dev branch:
