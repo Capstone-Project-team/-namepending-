@@ -18,6 +18,10 @@ const NewCampaign = () => {
     setState(true)
     const submit = async () => {
       try {
+        creds = {
+          ...creds,
+          funding_Goal: parseInt(creds.funding_Goal.replace(/,/g, "")),
+        }
         //send request to route to post campaign
         const response = await axios.post(baseUrl, creds, {
           "access-control-allow-origin": "*",

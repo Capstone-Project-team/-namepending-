@@ -3,7 +3,7 @@ import ApprovalList from "../components/ApprovalList"
 import axios from "axios"
 import cards from "../../fakeData"
 
-const baseUrl = "/api/pending"
+const baseUrl = "/api/campaigns/pending"
 //pending requests for admin to approve or deny
 const Pending = () => {
   const [pending, setPending] = useState([])
@@ -24,9 +24,15 @@ const Pending = () => {
     getPending()
   }, [])
 
-  const changePending = async (id) => {
-    const res = axios.delete(`/api/campaigns/${id}`)
-    console.log(res.data)
+  const changePending = async (id, e) => {
+    console.log(e.target.name)
+    if (e.target.name === "delete") {
+      const res = axios.delete(`/api/campaigns/${id}`)
+      console.log(res.data)
+    } else if (e.target.name === "put") {
+      const res = axios.put(`/api/campaigns/${id}`)
+      console.log(res.data)
+    }
     setPending(pending.filter((card) => card.id !== id))
   }
 

@@ -4,9 +4,8 @@ import { Jumbotron } from "react-bootstrap"
 import CampaignList from "../components/CampaignList"
 import { useAuthContext } from "../../context"
 import axios from "axios"
-import cards from "../../fakeData"
 
-const baseUrl = "/api/top"
+const baseUrl = "/api/campaigns/top"
 //landing page
 const Landing = () => {
   useEffect(() => {

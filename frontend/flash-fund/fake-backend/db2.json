@@ -288,7 +288,7 @@
       "author_id": "fdc8718c-c5c0-a2f7-ec07-f21dbd6fbea6",
       "approval_bool": true,
       "funding_goal": 25,
-      "funding_raised": 75,
+      "funding_raised": 125,
       "title": "ipsam sunt maxime",
       "description": "Corporis consequatur excepturi consequatur. Quaerat quia quaerat repudiandae veniam delectus debitis. Qui reiciendis eligendi veritatis iste modi suscipit vitae velit. Velit neque illum ipsa aliquid. Dolorem at tenetur ab eum voluptates. Molestiae iusto quia.",
       "photo": "http://placeimg.com/640/480/cats"
@@ -538,12 +538,24 @@
       "date_start": "Sat Apr 03 2021 12:08:20 GMT-0400 (Eastern Daylight Time)",
       "date_end": "Mon Apr 05 2021 03:28:36 GMT-0400 (Eastern Daylight Time)",
       "author_id": "9deda6b3-a2ba-eb5b-c591-03ce4b899066",
-      "approval_bool": false,
+      "approval_bool": true,
       "funding_goal": 3316,
       "funding_raised": 1306,
       "title": "amet eum quasi",
       "description": "Odio autem sit eos numquam possimus natus ipsum. Aut voluptas nisi neque repudiandae ut maxime. Qui eveniet ullam omnis saepe modi neque consequatur. Assumenda labore nostrum facilis fuga tenetur dolor. Fuga qui quia nemo. Ipsa qui quod deserunt et debitis rerum.",
       "photo": "http://placeimg.com/640/480/transport"
+    },
+    {
+      "id": 22,
+      "date_start": "2021-04-04T17:47:48.200Z",
+      "date_end": "2021-04-08T04:00:00.000Z",
+      "author_id": "377ad657-f6ee-4b60-9572-d9c3a8cf8462",
+      "approval_bool": true,
+      "funding_goal": 70000,
+      "funding_raised": 0,
+      "title": "new campaign",
+      "description": "fjdksalfjdskalfkdsla",
+      "photo": "http://placeimg.com/640/480/people"
     }
   ]
 }

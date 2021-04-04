@@ -11,13 +11,31 @@ import {
 import { Formik } from "formik"
 import handleAmountChange from "../../helpers"
 import { DonationSchema } from "../../validation_schemas"
+import axios from "axios"
+import { Redirect } from "react-router"
+
+const baseUrl = "/api/campaigns"
 
 //page that accepts donations once the 'donate' button is clicked on a campaign
 const Donate = (props) => {
   const [donationRecieved, setDonationRecieved] = useState(false)
+  const [redirect, setRedirect] = useState(false)
   const card = props.location.state
-  const handleDonation = (creds) => {
+  const handleDonation = async (creds) => {
+    creds = {
+      ...creds,
+      donation: parseInt(creds.donation.replace(/,/g, "")),
+    }
+    const res = await axios.put(`${baseUrl}/donation/${card.id}`, creds)
+    console.log(res)
     setDonationRecieved(true)
+    setTimeout(() => {
+      setRedirect(true)
+    }, 4000)
+  }
+
+  if (redirect) {
+    return <Redirect push to="/home" />
   }
 
   //return form for donation input
@@ -25,7 +43,7 @@ const Donate = (props) => {
     <>
       <div className="text-center">
         <h1>{card.title}</h1>
-        <h5>$900 / $1000</h5>
+        <h5>{`$${card.funding_raised} / $${card.funding_goal}`}</h5>
       </div>
       {donationRecieved ? (
         <Alert variant="success" className="text-center">
@@ -36,6 +54,7 @@ const Donate = (props) => {
           style={{
             boxShadow: "none",
             transform: "none",
+            //maxWidth: "30rem",
           }}
         >
           <Card.Body>
@@ -48,8 +67,8 @@ const Donate = (props) => {
             >
               {({ handleSubmit, values, touched, errors, setFieldValue }) => (
                 <Form noValidate onSubmit={handleSubmit}>
-                  <Row>
-                    <Form.Group as={Col} md="4" controlId="fundingGoal">
+                  <Row className="text-center">
+                    <Form.Group as={Col} controlId="fundingGoal">
                       <Form.Label>Donation amount</Form.Label>
                       <InputGroup hasValidation>
                         <InputGroup.Prepend>
@@ -81,7 +100,9 @@ const Donate = (props) => {
                       </InputGroup>
                     </Form.Group>
                   </Row>
-                  <Button type="submit">Donate</Button>
+                  <Button className="w-100" type="submit">
+                    Donate
+                  </Button>
                 </Form>
               )}
             </Formik>

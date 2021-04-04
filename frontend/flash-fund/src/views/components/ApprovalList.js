@@ -47,15 +47,16 @@ const ApprovalList = ({ cards, changePending, loading }) => {
                       className="overflow-auto"
                       style={{ maxHeight: "8rem" }}
                     >
-                      {card.text}
+                      {card.description}
                     </Card.Text>
                   </Card.Body>
                   <Card.Body className="text-center">
                     <ButtonGroup>
                       <Button
                         variant="link"
-                        onClick={() => {
-                          changePending(card.id)
+                        name="put"
+                        onClick={(e) => {
+                          changePending(card.id, e)
                           //need api call to update campaign to approved
                           //setCards(cards.filter((e) => e.id !== card.id))
                         }}
@@ -64,8 +65,9 @@ const ApprovalList = ({ cards, changePending, loading }) => {
                       </Button>
                       <Button
                         variant="link"
-                        onClick={() => {
-                          changePending(card.id)
+                        name="delete"
+                        onClick={(e) => {
+                          changePending(card.id, e)
                           //need api call to delete campaign
                           //setCards(cards.filter((e) => e.id !== card.id))
                         }}
