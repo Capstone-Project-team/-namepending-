@@ -92,7 +92,7 @@ server.post("/api/campaign", (req, res) => {
     date_start: new Date(),
     date_end: body.date_End,
     author_id: faker.datatype.uuid(),
-    approval_bool: true,
+    approval_bool: false,
     funding_goal: body.funding_Goal,
     funding_raised: 0,
     title: body.name,
@@ -116,7 +116,7 @@ server.get("/api/campaigns/top", (req, res) => {
     .take(6)
     .value()
 
-  console.log(data)
+  //console.log(data)
   if (data || data !== undefined) {
     return res.json(data)
   }
@@ -148,7 +148,7 @@ server.get("/api/campaigns/:id", (req, res) => {
 })
 
 //get all the pending campaings for the admin to look at
-server.get("/api/campaigns/pending", (req, res) => {
+server.get("/api/pending", (req, res) => {
   const data = router.db
     .get("campaigns")
     .filter({ approval_bool: false })

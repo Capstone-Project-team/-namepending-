@@ -544,18 +544,6 @@
       "title": "amet eum quasi",
       "description": "Odio autem sit eos numquam possimus natus ipsum. Aut voluptas nisi neque repudiandae ut maxime. Qui eveniet ullam omnis saepe modi neque consequatur. Assumenda labore nostrum facilis fuga tenetur dolor. Fuga qui quia nemo. Ipsa qui quod deserunt et debitis rerum.",
       "photo": "http://placeimg.com/640/480/transport"
-    },
-    {
-      "id": 22,
-      "date_start": "2021-04-04T17:47:48.200Z",
-      "date_end": "2021-04-08T04:00:00.000Z",
-      "author_id": "377ad657-f6ee-4b60-9572-d9c3a8cf8462",
-      "approval_bool": true,
-      "funding_goal": 70000,
-      "funding_raised": 0,
-      "title": "new campaign",
-      "description": "fjdksalfjdskalfkdsla",
-      "photo": "http://placeimg.com/640/480/people"
     }
   ]
 }
