@@ -2,6 +2,7 @@ const { resolve, extend } = require("json-schema-faker")
 const fs = require("fs")
 extend("faker", () => require("faker"))
 
+//create a json schema that fakes a db table for the 'campaigns'
 const schema = {
   type: "object",
   required: ["campaigns"],
@@ -63,6 +64,7 @@ const schema = {
   },
 }
 
+//create the schema and write it to the json file specified
 resolve(schema).then((sample) => {
   console.log("writing to json file")
   fs.writeFileSync(

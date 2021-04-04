@@ -1,5 +1,7 @@
 //puts a comma in the amound of money entered, for example 2,000 | 20,000 | etc
 //makes sure state is only updated on number input. No alphabetic input
+
+//used in Donation page and NewCampaign page
 const handleAmountChange = (e) => {
   console.log("handle")
   //regular expression for only number inputs

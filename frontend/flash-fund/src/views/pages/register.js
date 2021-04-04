@@ -1,44 +1,20 @@
 import React from "react"
 import { Form, Col, Button, Spinner } from "react-bootstrap"
 import "../../assets/css/login.css"
-import * as yup from "yup"
 import { Formik } from "formik"
 import { useAuthContext } from "../../context"
 import { useHistory } from "react-router-dom"
 import axios from "axios"
-
-const schema = yup.object().shape({
-  email: yup.string().email("Invalid email").required("Required"),
-  firstname: yup
-    .string()
-    .min(2, "First name min length")
-    .max(24, "Password must be between 6 and 24 characters long")
-    .required("Required"),
-  lastname: yup
-    .string()
-    .min(2, "Last name min length")
-    .max(24, "Password must be between 6 and 24 characters long")
-    .required("Required"),
-  password: yup
-    .string()
-    .min(6, "Password must be at least 6 characters")
-    .max(24, "Password must be between 6 and 24 characters long")
-    .required("Required"),
-  confirmPassword: yup
-    .string()
-    .oneOf([yup.ref("password"), null], "Passwords must match")
-    .required("Passwords must match"),
-})
+import { RegisterSchema } from "../../validation_schemas"
 
 const baseUrl = "/api/user"
 
 //register form page
 const Register = () => {
   const history = useHistory()
-  const authContext = useAuthContext()
-  const userInfo = authContext.auth
-  console.log(userInfo)
 
+  //on submit, send data to db to register user
+  //register should redirect to login
   const handleRegister = (creds, { setSubmitting }) => {
     const submit = async () => {
       const { firstname, lastname, email, password } = creds
@@ -75,7 +51,7 @@ const Register = () => {
     <div className="Login">
       <h1>Register</h1>
       <Formik
-        validationSchema={schema}
+        validationSchema={RegisterSchema}
         onSubmit={handleRegister}
         initialValues={{
           firstname: "",

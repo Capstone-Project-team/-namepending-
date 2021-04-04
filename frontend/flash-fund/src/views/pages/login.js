@@ -2,19 +2,9 @@ import React from "react"
 import { useHistory } from "react-router-dom"
 import { Form, Button, Spinner } from "react-bootstrap"
 import { Formik } from "formik"
-import * as yup from "yup"
 import axios from "axios"
-
 import { loginUser, useAuthContext } from "../../context"
-
-const schema = yup.object().shape({
-  email: yup.string().email("Invalid email").required("Required"),
-  password: yup
-    .string()
-    .min(6, "Password must be at least 6 characters")
-    .max(24, "Password must be between 6 and 24 characters long")
-    .required("Required"),
-})
+import { LoginSchema } from "../../validation_schemas"
 
 const baseUrl = "/api/login"
 
@@ -25,6 +15,7 @@ const Login = (props) => {
   const userInfo = authContext.auth
   console.log(userInfo)
 
+  //on login, post credentials to server, update context, update localStorage, and then redirect to home page
   const handleLogin = (creds, { setSubmitting }) => {
     const submit = async () => {
       try {
@@ -57,7 +48,7 @@ const Login = (props) => {
   return (
     <div className="Login">
       <Formik
-        validationSchema={schema}
+        validationSchema={LoginSchema}
         onSubmit={handleLogin}
         initialValues={{
           email: "",

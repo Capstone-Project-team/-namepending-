@@ -1,3 +1,5 @@
+//fake data to use for testing without running backend server
+
 const cards = [
   {
     id: 1,

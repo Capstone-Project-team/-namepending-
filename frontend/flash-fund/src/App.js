@@ -2,8 +2,8 @@ import React from "react"
 import { Route, Switch } from "react-router-dom"
 import { BrowserRouter as Router } from "react-router-dom"
 import * as ROUTES from "./routes/routes"
-import Login from "./views/pages/login"
-import Register from "./views/pages/register"
+import Login from "./views/pages/Login"
+import Register from "./views/pages/Register"
 import Home from "./views/pages/home"
 import Landing from "./views/pages/Landing"
 import Four0Four from "./views/pages/Four0Four"
@@ -17,24 +17,21 @@ import AdminRoute from "./views/components/AdminRoute"
 
 import "./assets/css/App.css"
 
-import { AuthProvider, useAuthContext } from "./context"
+import { AuthProvider } from "./context"
 import AppHeader from "./views/AppHeader"
 
+//router structure for application
+//all pages are wrapped in the AuthProvider to gain access to the auth context from the /context folder
+//Protected routes are only available to logged in users
 function App() {
   return (
     <AuthProvider>
       <AppHeader>
         <Router>
           <Switch>
-            <Route exact path={"/"}>
-              <Landing />
-            </Route>
-            <Route exact path={ROUTES.REGISTER}>
-              <Register />
-            </Route>
-            <Route exact path={ROUTES.LOGIN}>
-              <Login />
-            </Route>
+            <Route exact path={"/"} component={Landing}></Route>
+            <Route exact path={ROUTES.REGISTER} component={Register}></Route>
+            <Route exact path={ROUTES.LOGIN} component={Login}></Route>
             <Route exact path="/campaign/:id" component={CampaignShow}></Route>
             <ProtectedRoute
               exact
@@ -47,9 +44,7 @@ function App() {
               component={NewCampaign}
             />
             <ProtectedRoute path={ROUTES.PENDING} component={Pending} />
-            <Route path="*">
-              <Four0Four />
-            </Route>
+            <Route path="*" component={Four0Four}></Route>
           </Switch>
         </Router>
       </AppHeader>

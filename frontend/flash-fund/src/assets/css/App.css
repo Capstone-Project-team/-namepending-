@@ -37,12 +37,12 @@
     transform: rotate(360deg);
   }
 }
-
 .card:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
   transform: scale(1.05);
 }
 
+/*
 .image16by9 {
   padding-top: 56.25% !important;
 }
@@ -75,3 +75,5 @@
 ::after ::before {
   box-sizing: inherit;
 }
+
+*/

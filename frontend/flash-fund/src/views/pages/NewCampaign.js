@@ -2,28 +2,18 @@ import React, { useState } from "react"
 
 import { Spinner, Form, InputGroup, Button, Card } from "react-bootstrap"
 import { Formik } from "formik"
-import * as yup from "yup"
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import axios from "axios"
 import handleAmountChange from "../../helpers"
+import { NewCampaignSchema } from "../../validation_schemas"
 
-//schema for new campaign posting validation
-const schema = yup.object().shape({
-  funding_Goal: yup
-    .string()
-    .min(1, "must request at least $1")
-    .max(6, "can't request more than $99,999")
-    .required(),
-  date_End: yup.date().required(),
-  name: yup.string().min(4).max(24).required(),
-  fundraiser_description: yup.string().min(5).required(),
-})
 const baseUrl = "/api/campaign"
 
-//form to create to new campaign posting
 const NewCampaign = () => {
   const [state, setState] = useState(false)
+
+  //submit new data to db to store the campaign
   const handleCampaign = (creds, { setSubmitting }) => {
     setState(true)
     const submit = async () => {
@@ -52,7 +42,7 @@ const NewCampaign = () => {
     >
       <Card.Body>
         <Formik
-          validationSchema={schema}
+          validationSchema={NewCampaignSchema}
           onSubmit={handleCampaign}
           initialValues={{
             date_End: "",

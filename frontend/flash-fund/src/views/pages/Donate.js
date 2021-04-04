@@ -9,25 +9,8 @@ import {
   Alert,
 } from "react-bootstrap"
 import { Formik } from "formik"
-import * as yup from "yup"
 import handleAmountChange from "../../helpers"
-
-//schema used by yup to validate the form inputs
-const schema = yup.object().shape({
-  donation: yup
-    .string()
-    .min(1, "must request at least $1")
-    .max(6, "can't request more than $99,999")
-    .test("amount", "must be greater than 5", (value) => {
-      if (value === undefined) value = ""
-      //get either empty string or string of numbers without comma
-      let new_value = value === undefined ? "" : value.replace(/,/g, "")
-      //if donation is above $5
-      if (parseInt(new_value) >= 5) return true
-      return false
-    })
-    .required(),
-})
+import { DonationSchema } from "../../validation_schemas"
 
 //page that accepts donations once the 'donate' button is clicked on a campaign
 const Donate = (props) => {
@@ -51,29 +34,19 @@ const Donate = (props) => {
       ) : (
         <Card
           style={{
-            //maxWidth: "50rem",
             boxShadow: "none",
             transform: "none",
           }}
         >
           <Card.Body>
             <Formik
-              validationSchema={schema}
+              validationSchema={DonationSchema}
               onSubmit={handleDonation}
               initialValues={{
                 donation: "",
               }}
             >
-              {({
-                handleSubmit,
-                handleChange,
-                handleBlur,
-                values,
-                touched,
-                isValid,
-                errors,
-                setFieldValue,
-              }) => (
+              {({ handleSubmit, values, touched, errors, setFieldValue }) => (
                 <Form noValidate onSubmit={handleSubmit}>
                   <Row>
                     <Form.Group as={Col} md="4" controlId="fundingGoal">

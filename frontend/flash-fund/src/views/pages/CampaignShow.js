@@ -18,15 +18,19 @@ const fakeText =
 
 //campaign specific page. Will show after you click on a card
 const CampaignShow = (props) => {
+  //did user click donate or not. if so redirect do donation page
   const [donate, setDonate] = useState(false)
+
+  //set donation card so information can be passed as a prop to the donation page
   const [donationCard, setDonationCard] = useState({})
   const auth = useAuthContext().auth
   const history = useHistory()
   const { id } = props.match.params
   const card = cards.find((card) => card.id === Number(id))
   //only logged in user can donate
-  //redirect to homepage, but should display error message
+  //redirect to homepage, (but should display error message)
   if (donate) {
+    //!should be changed to an isAuthenticated method instead of checking for email
     if (auth.user.email) {
       return (
         <Redirect
@@ -39,8 +43,8 @@ const CampaignShow = (props) => {
       )
     }
     return <Redirect push to={"/login"} />
-    //history.push(`/campaign/${card.id}/donate`)
   }
+  //display singular card of campaign that user clicked on
   return (
     <Container className="py-4">
       <Card
@@ -57,7 +61,6 @@ const CampaignShow = (props) => {
             {fakeText}
           </Card.Text>
           <Button
-            //fluid
             className="w-100"
             variant="primary"
             onClick={() => {
