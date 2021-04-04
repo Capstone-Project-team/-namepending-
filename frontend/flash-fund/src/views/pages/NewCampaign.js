@@ -14,7 +14,7 @@ const NewCampaign = () => {
   const [state, setState] = useState(false)
 
   //submit new data to db to store the campaign
-  const handleCampaign = (creds, { setSubmitting }) => {
+  const handleCampaign = (creds, { setSubmitting, resetForm }) => {
     setState(true)
     const submit = async () => {
       try {
@@ -23,8 +23,10 @@ const NewCampaign = () => {
           "access-control-allow-origin": "*",
           "content-type": "application/json",
         })
-        const data = response.data
+        const data = response.status
+        console.log(data)
         setSubmitting(false)
+        resetForm()
       } catch (error) {
         setSubmitting(false)
       }
@@ -60,6 +62,7 @@ const NewCampaign = () => {
             errors,
             setFieldValue,
             isSubmitting,
+            resetForm,
           }) => (
             <Form noValidate onSubmit={handleSubmit}>
               <Form.Group md="4" controlId="fundraiserName">

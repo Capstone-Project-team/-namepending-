@@ -26,18 +26,18 @@ const CampaignList = (props) => {
                   (window.location.href = `/campaign/${card.id}`)
                 }
               >
-                <Card.Img variant="top" src={card.image} />
+                <Card.Img variant="top" src={card.photo} />
                 <Card.Body>
                   <Card.Title className="text-center">{card.title}</Card.Title>
                   <Card.Text
                     className="overflow-hidden"
                     style={{ maxHeight: "4rem" }}
                   >
-                    {fakeText}
+                    {card.description}
                   </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                  <small className="text-muted">raised $900 / $1000</small>
+                  <small className="text-muted">{`Raised $${card.funding_raised} / $${card.funding_goal}`}</small>
                 </Card.Footer>
               </Card>
             </Col>

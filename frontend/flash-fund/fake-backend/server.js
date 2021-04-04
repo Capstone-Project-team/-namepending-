@@ -13,13 +13,23 @@ server.use(middlewares)
 server.post("/api/login", (req, res) => {
   const body = req.body
 
-  const result = db.users.find((user) => {
+  /*const result = db.users.find((user) => {
     return user.email === body.email && user.password === body.password
-  })
+  })*/
+
+  const r = router.db
+    .get("users")
+    .find({
+      email: body.email,
+      password: body.password,
+    })
+    .value()
+  console.log("r", r)
   //if user info is found then send user info back
   //if not then return error
-  if (result) {
-    let { id, password, ...user } = result
+  //console.log("result", result)
+  if (r !== undefined) {
+    let { id, password, ...user } = r
     return res.status(200).jsonp(user)
   }
   return res.status(401).jsonp({
@@ -33,10 +43,23 @@ server.post("/api/campaign", (req, res) => {
 
   const router_db = router.db
 
-  //add to 'db'
-  insert(router_db, "campaings", body)
+  const data = {
+    id: router_db.get("campaigns").size().value(),
+    date_start: new Date(),
+    date_end: body.date_End,
+    author_id: faker.datatype.uuid(),
+    approval_bool: true,
+    funding_goal: body.funding_Goal,
+    funding_raised: 0,
+    title: body.name,
+    description: body.fundraiser_description,
+    photo: faker.image.image(),
+  }
 
-  return res.status(200)
+  //add to 'db'
+  insert(router_db, "campaigns", data)
+
+  return res.status(200).jsonp({ message: "message" })
 })
 
 //function used to insert data into specified 'table' or json property
@@ -51,16 +74,16 @@ function insert(db, collection, data) {
 server.post("/api/user", (req, res) => {
   const body = req.body
 
-  //no sure how to push using 'db' instance created globally
-  //so use lowdb instance
-  const router_db = router.db
-
-  const user = db.users.find((user) => {
-    return user.email === body.email
-  })
+  const r = router.db
+    .get("users")
+    .find({
+      email: body.email,
+      password: body.password,
+    })
+    .value()
 
   //dont register if already registered
-  if (user) {
+  if (r !== undefined) {
     return res.status(401).jsonp({ message: "already exists" })
   }
 
@@ -68,6 +91,7 @@ server.post("/api/user", (req, res) => {
   let userType = "donor"
   const kent = body.email.indexOf("@kent.edu")
   if (kent > -1) userType = "student"
+  if (body.email.indexOf("@admin.com")) userType = "admin"
 
   const data = {
     id: db.users.length,
@@ -80,8 +104,56 @@ server.post("/api/user", (req, res) => {
   }
 
   //add to db
-  insert(router_db, "users", data)
+  insert(router.db, "users", data)
   return res.status(200).jsonp({ message: "message" })
+})
+
+server.get("/api/top", (req, res) => {
+  const data = router.db
+    .get("campaigns")
+    .filter({ approval_bool: true })
+    .sortBy("funding_raised")
+    .take(6)
+    .value()
+  console.log(data)
+  if (data || data !== undefined) {
+    return res.json(data)
+  }
+  return res.status(400).jsonp({ error: "couldn't fetch" })
+  //console.log(data)
+})
+server.get("/api/campaigns", (req, res) => {
+  const data = router.db
+    .get("campaigns")
+    .filter({ approval_bool: true })
+    .value()
+
+  if (data || data !== undefined) {
+    return res.json(data)
+  }
+
+  return res.status(400).jsonp({ error: "couldn't fetch" })
+})
+
+server.get("/api/pending", (req, res) => {
+  const data = router.db
+    .get("campaigns")
+    .filter({ approval_bool: false })
+    .value()
+
+  if (data || data !== undefined) {
+    return res.json(data)
+  }
+  return res.status(400).jsonp({ message: "couldn't fetch" })
+})
+
+server.delete("/api/campaigns/:id", (req, res) => {
+  const id = parseInt(req.params.id)
+  const router_db = router.db
+  console.log("id", id)
+  router_db.get("campaigns").remove({ id: id }).write()
+
+  return res.status(200).jsonp({ message: "deleted" })
 })
 
 server.use(router)

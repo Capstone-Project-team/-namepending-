@@ -24,6 +24,9 @@ const schema = {
         "approval_bool",
         "funding_goal",
         "funding_raised",
+        "title",
+        "description",
+        "photo",
       ],
       properties: {
         id: {
@@ -53,6 +56,18 @@ const schema = {
           type: "integer",
           minimum: 0,
           maximum: 2500,
+        },
+        title: {
+          type: "string",
+          faker: "lorem.words",
+        },
+        description: {
+          type: "string",
+          faker: "lorem.sentences",
+        },
+        photo: {
+          type: "string",
+          faker: "image.image",
         },
       },
     },

@@ -3,20 +3,32 @@ import { Redirect, useHistory } from "react-router-dom"
 import { Jumbotron } from "react-bootstrap"
 import CampaignList from "../components/CampaignList"
 import { useAuthContext } from "../../context"
-
-//landing page
+import axios from "axios"
 import cards from "../../fakeData"
+
+const baseUrl = "/api/top"
+//landing page
 const Landing = () => {
   useEffect(() => {
-    const topCampaigns = async () => {}
-  })
-  const [top, setTop] = useState(cards)
+    const topCampaigns = async () => {
+      try {
+        //send request to register user
+        const response = await axios.get(baseUrl)
+        setTop(response.data)
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    topCampaigns()
+  }, [])
+  const [top, setTop] = useState([])
   const authContext = useAuthContext()
   const history = useHistory()
   //redirect already logged in users
   if (authContext.auth.user.email) {
     return <Redirect to="/home" />
   }
+  console.log("top", top)
   return (
     <div>
       <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>

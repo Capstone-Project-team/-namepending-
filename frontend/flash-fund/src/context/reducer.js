@@ -9,8 +9,10 @@ export const initialState = {
   user: user
     ? JSON.parse(user)
     : {
+        /*
         email: "test",
         userType: "student",
+        */
       },
   token: token || "",
 }
@@ -29,7 +31,6 @@ export const AuthReducer = (initialState, action) => {
           userType: action.payload.userType,
         },
         token: "fakeToken", //action.payload.token,
-        //userType: userType, //action.payload.userType,
       }
     case "logout":
       return {

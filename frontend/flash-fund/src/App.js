@@ -26,8 +26,8 @@ import AppHeader from "./views/AppHeader"
 function App() {
   return (
     <AuthProvider>
-      <AppHeader>
-        <Router>
+      <Router>
+        <AppHeader>
           <Switch>
             <Route exact path={"/"} component={Landing}></Route>
             <Route exact path={ROUTES.REGISTER} component={Register}></Route>
@@ -46,8 +46,8 @@ function App() {
             <ProtectedRoute path={ROUTES.PENDING} component={Pending} />
             <Route path="*" component={Four0Four}></Route>
           </Switch>
-        </Router>
-      </AppHeader>
+        </AppHeader>
+      </Router>
     </AuthProvider>
   )
 }

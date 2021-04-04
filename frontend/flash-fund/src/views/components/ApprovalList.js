@@ -13,19 +13,16 @@ import {
 
 //component to create a grid of cards to show campaings
 //used on landing page and home page
-const baseUrl = "/api/pending"
-const ApprovalList = (props) => {
-  //get campaigns that need approval still 
-  useEffect(() => {
-    const getPending = async () => {
-      const res = await axios.get(baseUrl)
-      return res.data
-    }
-  })
+const ApprovalList = ({ cards, changePending, loading }) => {
+  console.log(cards)
+  //get campaigns that need approval still
 
-  const [cards, setCards] = useState(props.cards)
+  //const [cards, setCards] = useState(props.cards)
 
   //return a list of cards that allow the admin to click 'approve' or 'deny' on
+  if (loading) {
+    return <h1>Loading...</h1>
+  }
   return (
     <Container>
       <CardDeck>
@@ -43,7 +40,7 @@ const ApprovalList = (props) => {
                     transform: "none",
                   }}
                 >
-                  <Card.Img variant="top" src={card.image} />
+                  <Card.Img variant="top" src={card.photo} />
                   <Card.Body>
                     <Card.Title className="text-left">{card.title}</Card.Title>
                     <Card.Text
@@ -54,30 +51,28 @@ const ApprovalList = (props) => {
                     </Card.Text>
                   </Card.Body>
                   <Card.Body className="text-center">
-                    {cards.find((r) => r.id === card.id).approved ? (
-                      <Card.Text>Approved</Card.Text>
-                    ) : (
-                      <ButtonGroup>
-                        <Button
-                          variant="link"
-                          onClick={() => {
-                            //need api call to update campaign to approved
-                            setCards(cards.filter((e) => e.id !== card.id))
-                          }}
-                        >
-                          Approve
-                        </Button>
-                        <Button
-                          variant="link"
-                          onClick={() => {
-                            //need api call to delete campaign
-                            setCards(cards.filter((e) => e.id !== card.id))
-                          }}
-                        >
-                          Deny
-                        </Button>
-                      </ButtonGroup>
-                    )}
+                    <ButtonGroup>
+                      <Button
+                        variant="link"
+                        onClick={() => {
+                          changePending(card.id)
+                          //need api call to update campaign to approved
+                          //setCards(cards.filter((e) => e.id !== card.id))
+                        }}
+                      >
+                        Approve
+                      </Button>
+                      <Button
+                        variant="link"
+                        onClick={() => {
+                          changePending(card.id)
+                          //need api call to delete campaign
+                          //setCards(cards.filter((e) => e.id !== card.id))
+                        }}
+                      >
+                        Deny
+                      </Button>
+                    </ButtonGroup>
                   </Card.Body>
                   <Card.Footer>
                     <small className="text-muted">user</small>
