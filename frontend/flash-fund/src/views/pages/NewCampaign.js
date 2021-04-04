@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 
 import { Container, Form, InputGroup, Button } from "react-bootstrap"
-import UserNavbar from "./UserNavbar"
 import { Formik } from "formik"
 import * as yup from "yup"
 import DatePicker from "react-datepicker"
@@ -54,7 +53,6 @@ const NewCampaign = () => {
   }
   return (
     <div>
-      <UserNavbar />
       <Container>
         <br />
         <Formik

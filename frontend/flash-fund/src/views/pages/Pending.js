@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
-import { Container } from "react-bootstrap"
-import ApprovalList from "./ApprovalList"
+import ApprovalList from "../components/ApprovalList"
 
 import cards from "../../fakeData"
 
@@ -9,9 +8,9 @@ import cards from "../../fakeData"
 const Pending = () => {
   useEffect(() => {}, [])
   return (
-    <Container className="my-4">
+    <>
       <ApprovalList cards={cards} pending={true} />
-    </Container>
+    </>
   )
 }
 

@@ -6,7 +6,7 @@ const AppHeader = ({ children }) => {
   return (
     <>
       <UserNavbar />
-      <Container>{children}</Container>
+      <Container className="my-5">{children}</Container>
     </>
   )
 }

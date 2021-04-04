@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Container, CardDeck, Row, Card, Col } from "react-bootstrap"
 
 //component to create a grid of cards to show campaings
