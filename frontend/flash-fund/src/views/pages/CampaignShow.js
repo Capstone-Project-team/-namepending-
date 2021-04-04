@@ -6,6 +6,7 @@ import {
   Container,
   ListGroup,
   ListGroupItem,
+  ProgressBar,
   Row,
 } from "react-bootstrap"
 import { Redirect, useHistory } from "react-router"
@@ -56,6 +57,7 @@ const CampaignShow = (props) => {
             {fakeText}
           </Card.Text>
           <Button
+            //fluid
             className="w-100"
             variant="primary"
             onClick={() => {
@@ -68,6 +70,10 @@ const CampaignShow = (props) => {
         </Card.Body>
         <ListGroup className="list-group-flush text-left">
           <ListGroupItem>user</ListGroupItem>
+          <ListGroupItem>
+            Raised $900 / $1000
+            <ProgressBar now={90} />
+          </ListGroupItem>
         </ListGroup>
         <Card.Footer className="text-muted text-left">
           <Row>

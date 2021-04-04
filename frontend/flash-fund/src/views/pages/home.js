@@ -38,7 +38,7 @@ const Home = (...props) => {
   }
 
   return (
-    <div>
+    <div style={{ background: "#d4d7de" }}>
       <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>
       {button}
       <h1 className="text-center">Campaigns</h1>

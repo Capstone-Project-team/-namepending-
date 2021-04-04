@@ -16,8 +16,22 @@ const UserNavbar = (props) => {
     //history.push("/")
   }
   return (
-    <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Navbar.Brand href="/home">Flash Fund</Navbar.Brand>
+    <Navbar
+      sticky="top"
+      collapseOnSelect
+      expand="lg"
+      style={{ background: "#242a36" }}
+    >
+      <Navbar.Brand href="/home">
+        <img
+          src="/logo192.png"
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          alt="React Bootstrap logo"
+        />
+        Flash Fund
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse
         id="responsive-navbar-nav"
@@ -32,8 +46,12 @@ const UserNavbar = (props) => {
           </>
         ) : (
           <>
-            <Nav.Link href="/login">Login</Nav.Link>
-            <Nav.Link href="/register">Register</Nav.Link>
+            <Nav.Link href="/login" style={{ color: "#e3d03b" }}>
+              Login
+            </Nav.Link>
+            <Nav.Link href="/register" style={{ color: "#e3d03b" }}>
+              Register
+            </Nav.Link>
           </>
         )}
       </Navbar.Collapse>

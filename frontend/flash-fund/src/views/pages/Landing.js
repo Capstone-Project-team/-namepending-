@@ -18,9 +18,18 @@ const Landing = () => {
     return <Redirect to="/home" />
   }
   return (
-    <div>
+    <div style={{ background: "#d4d7de" }}>
       <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>
-      <Jumbotron className="text-center">
+      <Jumbotron
+        style={{
+          background: "#FFD700",
+          color: "#242a36",
+          height: "140px",
+          paddingTop: "20px",
+          textAlign: "center",
+        }}
+        className="text-center"
+      >
         <h1>Welcome to Flash Fund</h1>
       </Jumbotron>
       <h1 className="text-center">Top Campaigns</h1>

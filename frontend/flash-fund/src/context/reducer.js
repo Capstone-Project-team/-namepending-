@@ -6,7 +6,11 @@ console.log(user)
 //set initial state of context when page is rendered
 //state is either data from local storage, or blank
 export const initialState = {
-  user: user ? JSON.parse(user) : { email: "test", userType: "admin" },
+  user: user
+    ? JSON.parse(user)
+    : {
+        /*email: "test", userType: "admin"*/
+      },
   token: token || "",
 }
 

@@ -15,7 +15,7 @@ const MyPagination = ({ cards, pageChange }) => {
     const indexOfFirst = indexOfLast - pageSize
     const current = cards.slice(indexOfFirst, indexOfLast)
 
-    const pageNumbers = _.range(1, 10)
+    const pageNumbers = _.range(1, totalPages + 1)
 
     const newState = {
       totalCards: totalCards,
@@ -31,10 +31,7 @@ const MyPagination = ({ cards, pageChange }) => {
     setPages(newState)
     pageChange(current)
   }
-  const [pages, setPages] = useState({
-    currentPage: 1,
-    pageNumbers: _.range(1, 10),
-  })
+  const [pages, setPages] = useState({})
   useEffect(() => {
     console.log("effect")
     updatePage(1)
@@ -43,17 +40,18 @@ const MyPagination = ({ cards, pageChange }) => {
   return (
     <>
       <Pagination className="justify-content-center">
-        {pages.pageNumbers.map((number) => {
-          return (
-            <Pagination.Item
-              key={number}
-              active={number === pages.currentPage}
-              onClick={() => updatePage(number)}
-            >
-              {number}
-            </Pagination.Item>
-          )
-        })}
+        {pages.pageNumbers &&
+          pages.pageNumbers.map((number) => {
+            return (
+              <Pagination.Item
+                key={number}
+                active={number === pages.currentPage}
+                onClick={() => updatePage(number)}
+              >
+                {number}
+              </Pagination.Item>
+            )
+          })}
       </Pagination>
     </>
   )
