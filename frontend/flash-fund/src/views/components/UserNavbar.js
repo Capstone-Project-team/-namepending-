@@ -1,19 +1,22 @@
-import React from "react"
-import { Redirect, useHistory } from "react-router-dom"
+import React, { useState } from "react"
+import { Redirect } from "react-router-dom"
 import { Button, Nav, Navbar } from "react-bootstrap"
 import "../../assets/css/login.css"
 import { logoutUser, useAuthContext } from "../../context"
 
-//nav bar that will be used by user who is logged in
-//includes logout button
+//navbar that will be rendered as a header on each page
+//a logout button or login/register buttons will be conditionally rendered based on whether a user is logged in
+//
 const UserNavbar = (props) => {
+  const [loggedout, setLoggedout] = useState(false)
   const authContext = useAuthContext()
-  const history = useHistory()
-  console.log(authContext)
+  if (loggedout) {
+    return <Redirect push to="/" />
+  }
   const handleLogout = () => {
     logoutUser(authContext.dispatch)
-    return <Redirect to="/" />
-    //history.push("/")
+    setLoggedout(true)
+    //return <Redirect push to="/" />
   }
   return (
     <Navbar

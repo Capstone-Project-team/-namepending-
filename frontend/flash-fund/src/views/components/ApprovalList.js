@@ -15,6 +15,7 @@ import {
 //used on landing page and home page
 const baseUrl = "/api/pending"
 const ApprovalList = (props) => {
+  //get campaigns that need approval still 
   useEffect(() => {
     const getPending = async () => {
       const res = await axios.get(baseUrl)
@@ -24,7 +25,7 @@ const ApprovalList = (props) => {
 
   const [cards, setCards] = useState(props.cards)
 
-  console.log(cards)
+  //return a list of cards that allow the admin to click 'approve' or 'deny' on
   return (
     <Container>
       <CardDeck>
@@ -47,7 +48,7 @@ const ApprovalList = (props) => {
                     <Card.Title className="text-left">{card.title}</Card.Title>
                     <Card.Text
                       className="overflow-auto"
-                      className={{ maxHeight: "8rem" }}
+                      style={{ maxHeight: "8rem" }}
                     >
                       {card.text}
                     </Card.Text>
@@ -60,6 +61,7 @@ const ApprovalList = (props) => {
                         <Button
                           variant="link"
                           onClick={() => {
+                            //need api call to update campaign to approved
                             setCards(cards.filter((e) => e.id !== card.id))
                           }}
                         >
@@ -68,6 +70,7 @@ const ApprovalList = (props) => {
                         <Button
                           variant="link"
                           onClick={() => {
+                            //need api call to delete campaign
                             setCards(cards.filter((e) => e.id !== card.id))
                           }}
                         >

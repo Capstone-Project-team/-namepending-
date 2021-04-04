@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { Form, Col, Button, Spinner } from "react-bootstrap"
 import "../../assets/css/login.css"
 import { Formik } from "formik"
 import { useAuthContext } from "../../context"
-import { useHistory } from "react-router-dom"
+import { Redirect, useHistory } from "react-router-dom"
 import axios from "axios"
 import { RegisterSchema } from "../../validation_schemas"
 
@@ -11,7 +11,12 @@ const baseUrl = "/api/user"
 
 //register form page
 const Register = () => {
-  const history = useHistory()
+  const [registered, setRegistered] = useState(false)
+
+  //redirect if successfully registered
+  if (registered) {
+    return <Redirect push to={"/login"} />
+  }
 
   //on submit, send data to db to register user
   //register should redirect to login
@@ -19,6 +24,7 @@ const Register = () => {
     const submit = async () => {
       const { firstname, lastname, email, password } = creds
       try {
+        //send request to register user
         const response = await axios.post(
           baseUrl,
           {
@@ -34,6 +40,9 @@ const Register = () => {
         )
         console.log(response)
         setSubmitting(false)
+        //redirect on register
+        setRegistered(true)
+
         /*if (response.data) {
           //localStorage.setItem("user", JSON.stringify(data))
           //localStorage.setItem("token", "fakeToken")

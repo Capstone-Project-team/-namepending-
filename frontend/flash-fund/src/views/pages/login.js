@@ -21,6 +21,7 @@ const Login = (props) => {
       try {
         console.log(creds)
 
+        //make api call to route
         const response = await axios.post(baseUrl, creds, {
           "access-control-allow-origin": "*",
         })
@@ -31,20 +32,26 @@ const Login = (props) => {
           email: data.email,
           userType: data.user_type,
         }
+        //if success
         if (data) {
+          //add to local storage
           localStorage.setItem("user", JSON.stringify(payload))
           localStorage.setItem("token", "fakeToken")
+          //update auth context state
           loginUser(authContext.dispatch, payload)
+          //redirect to home page
           history.push("/home")
         }
       } catch (error) {
-        //console.log("error", error.response.data.error)
+        //handle error response
+
         setSubmitting(false)
       }
     }
     submit()
   }
 
+  //return form for login
   return (
     <div className="Login">
       <Formik

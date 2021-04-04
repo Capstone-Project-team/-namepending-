@@ -18,6 +18,7 @@ const NewCampaign = () => {
     setState(true)
     const submit = async () => {
       try {
+        //send request to route to post campaign
         const response = await axios.post(baseUrl, creds, {
           "access-control-allow-origin": "*",
           "content-type": "application/json",

@@ -21,7 +21,6 @@ const CampaignList = (props) => {
             <Col key={index}>
               <Card
                 className="mb-3"
-                //style={{ maxWidth: "25rem" }}
                 onClick={(event) =>
                   //redired to campaign specific page. should be done using react-router useHistory, but can't get it to work correctly
                   (window.location.href = `/campaign/${card.id}`)
