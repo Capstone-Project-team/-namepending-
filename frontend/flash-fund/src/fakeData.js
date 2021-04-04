@@ -1,3 +1,5 @@
+//fake data to use for testing without running backend server
+
 const cards = [
   {
     id: 1,
@@ -5,6 +7,7 @@ const cards = [
     text: "Campaign description 1",
     footer: "footer1",
     image: "/photos/apartment.jpg",
+    approved: false,
   },
   {
     id: 2,
@@ -12,6 +15,7 @@ const cards = [
     text: "Campaign description 2",
     footer: "footer2",
     image: "/photos/entrance.jpg",
+    approved: false,
   },
   {
     id: 3,
@@ -19,6 +23,7 @@ const cards = [
     text: "Campaign description 3",
     footer: "footer3",
     image: "/photos/front-display.jpg",
+    approved: false,
   },
   {
     id: 4,
@@ -26,6 +31,7 @@ const cards = [
     text: "Campaign description 1",
     footer: "footer1",
     image: "/photos/apartment.jpg",
+    approved: false,
   },
   {
     id: 5,
@@ -33,6 +39,7 @@ const cards = [
     text: "Campaign description 2",
     footer: "footer2",
     image: "/photos/entrance.jpg",
+    approved: false,
   },
   {
     id: 6,
@@ -40,6 +47,7 @@ const cards = [
     text: "Campaign description 3",
     footer: "footer3",
     image: "/photos/front-display.jpg",
+    approved: false,
   },
 ]
 

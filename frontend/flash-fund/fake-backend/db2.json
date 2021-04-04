@@ -1,0 +1,561 @@
+{
+  "users": [
+    {
+      "id": 96285972,
+      "user_id": "e97fda50-9105-376c-b4d1-9f65f4bd74af",
+      "first_name": "Mariela",
+      "last_name": "Fisher",
+      "email": "Mariela_Fisher@kent.edu",
+      "password": "Laura/Laura",
+      "user_type": "student"
+    },
+    {
+      "id": 33569008,
+      "user_id": "e37a7140-ce5f-0c5b-2228-764aa7a32ca6",
+      "first_name": "Daniella",
+      "last_name": "Zieme",
+      "email": "Daniella16@kent.edu",
+      "password": "Emilie",
+      "user_type": "student"
+    },
+    {
+      "id": 51387845,
+      "user_id": "9450f11b-f474-79d4-5d51-4d1b4bee276c",
+      "first_name": "Lydia",
+      "last_name": "Mosciski",
+      "email": "Lydia36@kent.edu",
+      "password": "Maximillian",
+      "user_type": "student"
+    },
+    {
+      "id": 60088996,
+      "user_id": "34f0a569-66ba-1b07-8f71-13c695650446",
+      "first_name": "Merl",
+      "last_name": "McLaughlin",
+      "email": "Merl_McLaughlin24@kent.edu",
+      "password": "Della/Della",
+      "user_type": "student"
+    },
+    {
+      "id": 48828227,
+      "user_id": "d0d489db-113b-a4c0-8cb2-7d693a432e49",
+      "first_name": "Larissa",
+      "last_name": "Kirlin",
+      "email": "Larissa_Kirlin@kent.edu",
+      "password": "Idella",
+      "user_type": "student"
+    },
+    {
+      "id": 62247459,
+      "user_id": "89077d90-373d-99aa-747a-a34fefb0ff7d",
+      "first_name": "Ali",
+      "last_name": "Runte",
+      "email": "Ali.Runte@kent.edu",
+      "password": "Trudie",
+      "user_type": "student"
+    },
+    {
+      "id": 824165,
+      "user_id": "d241a841-a45a-7c5f-8eb7-7b4a9ff73eb5",
+      "first_name": "Deven",
+      "last_name": "Zieme",
+      "email": "Deven_Zieme@kent.edu",
+      "password": "Brayan",
+      "user_type": "student"
+    },
+    {
+      "id": 95768497,
+      "user_id": "01dc8b97-2f43-a2e0-c607-d498881d319e",
+      "first_name": "Pearline",
+      "last_name": "Hamill",
+      "email": "Pearline.Hamill@kent.edu",
+      "password": "Dora=Dora",
+      "user_type": "student"
+    },
+    {
+      "id": 89900988,
+      "user_id": "c914f820-47de-2e0a-8ae6-8cbd98cbc3d5",
+      "first_name": "Lane",
+      "last_name": "Corwin",
+      "email": "Lane.Corwin67@kent.edu",
+      "password": "Rod^Rod",
+      "user_type": "student"
+    },
+    {
+      "id": 94348740,
+      "user_id": "8e616583-7175-17a0-bba1-6c99285b1fef",
+      "first_name": "Aglae",
+      "last_name": "Stamm",
+      "email": "Aglae16@kent.edu",
+      "password": "Marlon",
+      "user_type": "student"
+    },
+    {
+      "id": 69973404,
+      "user_id": "3f8e9efd-603f-03cd-4f46-7cb8e04c7a64",
+      "first_name": "Leif",
+      "last_name": "Prosacco",
+      "email": "Leif.Prosacco@kent.edu",
+      "password": "Salvador",
+      "user_type": "student"
+    },
+    {
+      "id": 12091148,
+      "user_id": "fc6a8afc-0ca3-3220-90cb-2e4a869c32ad",
+      "first_name": "Buck",
+      "last_name": "McClure",
+      "email": "Buck_McClure32@kent.edu",
+      "password": "Wilber",
+      "user_type": "student"
+    },
+    {
+      "id": 45625855,
+      "user_id": "eb1cd0cb-efc0-4966-8fdf-29c68cff3ef0",
+      "first_name": "Thora",
+      "last_name": "Predovic",
+      "email": "Thora77@kent.edu",
+      "password": "Parker",
+      "user_type": "student"
+    },
+    {
+      "id": 76288278,
+      "user_id": "32e262e4-f741-d37d-8154-c1207fd0a770",
+      "first_name": "Diana",
+      "last_name": "Moore",
+      "email": "Diana.Moore23@kent.edu",
+      "password": "Milford",
+      "user_type": "student"
+    },
+    {
+      "id": 87370553,
+      "user_id": "a63e30fb-af47-71a0-e45c-42ffec933df3",
+      "first_name": "Caleb",
+      "last_name": "Schuppe",
+      "email": "Caleb.Schuppe79@kent.edu",
+      "password": "Jacquelyn",
+      "user_type": "student"
+    },
+    {
+      "id": 10532428,
+      "user_id": "d9a06adf-ba08-2723-1ee0-d7aa7e7089df",
+      "first_name": "Jerome",
+      "last_name": "Rodriguez",
+      "email": "Jerome.Rodriguez@kent.edu",
+      "password": "Lauretta",
+      "user_type": "student"
+    },
+    {
+      "id": 26417401,
+      "user_id": "ba2d8497-1325-3337-ec69-bed35c28ebde",
+      "first_name": "Arden",
+      "last_name": "Monahan",
+      "email": "Arden.Monahan20@kent.edu",
+      "password": "Larry Larry",
+      "user_type": "student"
+    },
+    {
+      "id": 75931854,
+      "user_id": "5caef23b-495f-896b-d80f-429c28ec4687",
+      "first_name": "Leslie",
+      "last_name": "Larkin",
+      "email": "Leslie29@kent.edu",
+      "password": "Ebba-Ebba",
+      "user_type": "student"
+    },
+    {
+      "id": 38426883,
+      "user_id": "771e18b1-40a9-3a66-39ba-3da78600f491",
+      "first_name": "Mac",
+      "last_name": "Stiedemann",
+      "email": "Mac60@kent.edu",
+      "password": "Terrill",
+      "user_type": "student"
+    },
+    {
+      "id": 51520679,
+      "user_id": "c0e8a8ca-d725-e86e-9144-25efede4f482",
+      "first_name": "Eugenia",
+      "last_name": "Champlin",
+      "email": "Eugenia.Champlin@kent.edu",
+      "password": "Dianna",
+      "user_type": "student"
+    },
+    {
+      "id": 71320207,
+      "user_id": "33cfe63d-7662-4002-aef9-60c7e587d2e9",
+      "first_name": "Gene",
+      "last_name": "Brown",
+      "email": "Gene_Brown@kent.edu",
+      "password": "Eddie Eddie",
+      "user_type": "student"
+    },
+    {
+      "id": 71429886,
+      "user_id": "afc53e31-7268-5afe-361e-e6db9cbc8263",
+      "first_name": "Rodger",
+      "last_name": "McCullough",
+      "email": "Rodger5@kent.edu",
+      "password": "Alize=Alize",
+      "user_type": "student"
+    },
+    {
+      "id": 93153067,
+      "user_id": "7d67476e-4c55-0903-1a94-59ae7b2cbc19",
+      "first_name": "Gina",
+      "last_name": "Hartmann",
+      "email": "Gina_Hartmann94@kent.edu",
+      "password": "Alvena",
+      "user_type": "student"
+    },
+    {
+      "id": 12420802,
+      "user_id": "fc0ce1a7-83fd-efc5-2c2b-037fb649be8e",
+      "first_name": "August",
+      "last_name": "Beahan",
+      "email": "August77@kent.edu",
+      "password": "Felicity",
+      "user_type": "student"
+    },
+    {
+      "id": 31328328,
+      "user_id": "f622061d-ebc0-be98-006d-b998f7e95cc9",
+      "first_name": "Juliet",
+      "last_name": "Quigley",
+      "email": "Juliet.Quigley87@kent.edu",
+      "password": "Mario@Mario",
+      "user_type": "student"
+    },
+    {
+      "id": 25,
+      "first_name": "Ian",
+      "last_name": "Kusner",
+      "email": "iankush1317@gmail.com",
+      "password": "password",
+      "user_id": "14063545-bbf2-43ad-bfb9-f8042a62dfc4",
+      "user_type": "donor"
+    },
+    {
+      "id": 26,
+      "first_name": "ian",
+      "last_name": "kusner",
+      "email": "irk@att.net",
+      "password": "password",
+      "user_id": "f082e0a7-fd77-4fca-92cc-63329f06ff43",
+      "user_type": "donor"
+    },
+    {
+      "id": 27,
+      "first_name": "ian",
+      "last_name": "kusner",
+      "email": "ikusner@kent.edu",
+      "password": "password",
+      "user_id": "c0be1029-2719-4834-8761-88661d713a62",
+      "user_type": "student"
+    },
+    {
+      "id": 28,
+      "first_name": "aaaa",
+      "last_name": "aaaa",
+      "email": "a@a.com",
+      "password": "password",
+      "user_id": "fab9d140-6857-49a1-bc98-a9ecdfd195c8",
+      "user_type": "donor"
+    },
+    {
+      "id": 29,
+      "first_name": "ddd",
+      "last_name": "ddd",
+      "email": "d@d.com",
+      "password": "password",
+      "user_id": "373ad175-5a16-47b7-8207-e28cbc284415",
+      "user_type": "donor"
+    },
+    {
+      "id": 30,
+      "first_name": "amdin",
+      "last_name": "admin",
+      "email": "admin@admin.com",
+      "password": "admin1",
+      "user_id": "7a1935c4-dd30-4c07-84a3-34e2ef97d708",
+      "user_type": "admin"
+    }
+  ],
+  "campaigns": [
+    {
+      "id": 35155921,
+      "date_start": "Sat Apr 03 2021 10:02:55 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 12:21:27 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "fdc8718c-c5c0-a2f7-ec07-f21dbd6fbea6",
+      "approval_bool": true,
+      "funding_goal": 25,
+      "funding_raised": 125,
+      "title": "ipsam sunt maxime",
+      "description": "Corporis consequatur excepturi consequatur. Quaerat quia quaerat repudiandae veniam delectus debitis. Qui reiciendis eligendi veritatis iste modi suscipit vitae velit. Velit neque illum ipsa aliquid. Dolorem at tenetur ab eum voluptates. Molestiae iusto quia.",
+      "photo": "http://placeimg.com/640/480/cats"
+    },
+    {
+      "id": 29891005,
+      "date_start": "Sat Apr 03 2021 11:12:31 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 11:42:31 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "3b8c051d-7154-025d-deae-3b1595a966cc",
+      "approval_bool": false,
+      "funding_goal": 2091,
+      "funding_raised": 246,
+      "title": "qui minus delectus",
+      "description": "Non eligendi harum nemo rem aut quos tenetur. Quo id omnis consequatur et in maxime magni atque. Eum explicabo neque quas dolores quae enim officiis qui molestiae. Quos necessitatibus voluptas voluptas natus.",
+      "photo": "http://placeimg.com/640/480/nightlife"
+    },
+    {
+      "id": 14854664,
+      "date_start": "Sat Apr 03 2021 18:54:01 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 14:30:09 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "78fde000-cf5f-cc99-841a-0e9eb0b2931f",
+      "approval_bool": true,
+      "funding_goal": 1377,
+      "funding_raised": 2144,
+      "title": "enim excepturi excepturi",
+      "description": "Quisquam deserunt repellat iste ea eos. Qui sapiente itaque hic minima voluptatem est repellat voluptate nam. Omnis numquam iste consequatur cupiditate voluptate minima modi. Distinctio impedit perferendis qui quia qui aliquam ut. Ad libero pariatur est aliquam voluptas nihil quisquam facilis. Vel voluptatem et est dignissimos repudiandae est.",
+      "photo": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 7349789,
+      "date_start": "Sat Apr 03 2021 08:40:40 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Mon Apr 05 2021 01:51:36 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "c05fbdb5-a5c6-65c2-5a36-cee550b7e231",
+      "approval_bool": true,
+      "funding_goal": 3925,
+      "funding_raised": 1827,
+      "title": "consequatur nulla cum",
+      "description": "Ut quo iste sed quia inventore nulla dicta. Incidunt laudantium debitis. Expedita expedita et tenetur optio optio.",
+      "photo": "http://placeimg.com/640/480/animals"
+    },
+    {
+      "id": 95296146,
+      "date_start": "Sat Apr 03 2021 12:13:41 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 08:14:40 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "99b8bc16-1fe1-910f-dd5b-b9ba16d8ec1a",
+      "approval_bool": true,
+      "funding_goal": 2772,
+      "funding_raised": 32,
+      "title": "eligendi est alias",
+      "description": "Laudantium in dolor. Sed error ratione in dolores magni eaque autem dolorem qui.",
+      "photo": "http://placeimg.com/640/480/business"
+    },
+    {
+      "id": 29923356,
+      "date_start": "Sat Apr 03 2021 16:54:47 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 04:02:46 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "7fd328b2-a17f-b8d7-87cb-31529d9cd088",
+      "approval_bool": false,
+      "funding_goal": 564,
+      "funding_raised": 1060,
+      "title": "placeat quis neque",
+      "description": "Nostrum eaque illum quia velit. Quam nemo corporis ut temporibus ut.",
+      "photo": "http://placeimg.com/640/480/animals"
+    },
+    {
+      "id": 10359243,
+      "date_start": "Sat Apr 03 2021 15:59:45 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 10:54:10 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "cce4d603-bc79-8464-9d8a-e2d075f657dd",
+      "approval_bool": true,
+      "funding_goal": 1179,
+      "funding_raised": 1463,
+      "title": "aut quos consequatur",
+      "description": "Sequi quis in molestiae inventore rerum consequuntur voluptatibus. Expedita accusantium quo et et odit est consectetur. Est fugit explicabo. Quas voluptate nostrum nesciunt deserunt quod natus maiores laudantium voluptatem.",
+      "photo": "http://placeimg.com/640/480/cats"
+    },
+    {
+      "id": 15235168,
+      "date_start": "Sat Apr 03 2021 04:20:35 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 20:06:18 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "ae7a828f-9919-cdce-2f5c-058b8a365f77",
+      "approval_bool": false,
+      "funding_goal": 4668,
+      "funding_raised": 1750,
+      "title": "minima odit temporibus",
+      "description": "Voluptas nostrum nulla et qui amet nihil qui veritatis omnis. Suscipit libero sit dolores eos et eligendi voluptatem soluta tempora. Sapiente qui repellendus consectetur officiis eligendi. Et neque praesentium velit. Quibusdam velit voluptas ratione. Nesciunt numquam nulla similique rerum voluptas incidunt illum.",
+      "photo": "http://placeimg.com/640/480/nightlife"
+    },
+    {
+      "id": 32625056,
+      "date_start": "Sat Apr 03 2021 20:36:38 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 07:35:52 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "017d7972-6d32-ca51-93ee-6572c403d1d1",
+      "approval_bool": false,
+      "funding_goal": 206,
+      "funding_raised": 0,
+      "title": "incidunt perspiciatis quisquam",
+      "description": "Excepturi voluptatem sit commodi dolorem repudiandae cumque. Qui qui et necessitatibus at magnam soluta perferendis et aliquam. Labore quis deserunt consequatur nostrum sit aut enim illum perspiciatis. Quas modi nisi est reprehenderit aut eveniet et.",
+      "photo": "http://placeimg.com/640/480/animals"
+    },
+    {
+      "id": 28348079,
+      "date_start": "Sat Apr 03 2021 15:35:50 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Mon Apr 05 2021 00:46:57 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "72bbb993-4fc5-0767-15b1-2297b7617b5d",
+      "approval_bool": true,
+      "funding_goal": 2310,
+      "funding_raised": 1522,
+      "title": "similique ea autem",
+      "description": "Voluptas omnis soluta voluptas architecto saepe veritatis. Voluptatem architecto ea qui vel. Voluptates temporibus velit nemo ipsam ut consequatur. Ullam nemo qui blanditiis eos aut itaque et ut quod. Facilis dolores atque dolore sed et.",
+      "photo": "http://placeimg.com/640/480/city"
+    },
+    {
+      "id": 81082395,
+      "date_start": "Sat Apr 03 2021 15:29:41 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 18:07:47 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "b70067f3-051b-55f8-ccae-1cced323d07e",
+      "approval_bool": false,
+      "funding_goal": 2835,
+      "funding_raised": 2261,
+      "title": "accusantium quisquam nihil",
+      "description": "Sunt est hic iure nemo culpa repudiandae officiis ut. Incidunt odit dolores rerum vel.",
+      "photo": "http://placeimg.com/640/480/food"
+    },
+    {
+      "id": 1999985,
+      "date_start": "Sat Apr 03 2021 18:54:19 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 08:59:17 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "0bdb0d8a-6025-35c0-5d2d-327cd2567fe6",
+      "approval_bool": true,
+      "funding_goal": 4144,
+      "funding_raised": 2309,
+      "title": "enim qui natus",
+      "description": "Rerum quaerat ab error unde nobis. Eum beatae eos. Ut modi autem aspernatur modi hic.",
+      "photo": "http://placeimg.com/640/480/fashion"
+    },
+    {
+      "id": 48629282,
+      "date_start": "Sat Apr 03 2021 18:56:23 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 14:51:21 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "d241d990-0f34-5326-fd68-dc96192a29a2",
+      "approval_bool": false,
+      "funding_goal": 533,
+      "funding_raised": 191,
+      "title": "sed officia fuga",
+      "description": "Laboriosam rerum velit sint. Corrupti ut et odit omnis voluptatem dolor rem quis quia.",
+      "photo": "http://placeimg.com/640/480/transport"
+    },
+    {
+      "id": 45376522,
+      "date_start": "Sat Apr 03 2021 16:04:02 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 20:28:10 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "4f2ad721-7ef8-e785-886e-d5107af166d5",
+      "approval_bool": false,
+      "funding_goal": 4795,
+      "funding_raised": 206,
+      "title": "aliquid aperiam doloribus",
+      "description": "Sed qui perspiciatis dolores asperiores perferendis eaque. Architecto saepe minus.",
+      "photo": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 43973405,
+      "date_start": "Sat Apr 03 2021 23:19:06 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 17:31:17 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "f7da2706-ae04-9aca-7531-41e0c1a028c2",
+      "approval_bool": true,
+      "funding_goal": 1776,
+      "funding_raised": 1242,
+      "title": "temporibus non quae",
+      "description": "Veritatis sint animi numquam ipsum est dicta repellendus illo accusantium. Recusandae error similique expedita. Voluptas officiis deserunt numquam eveniet quos corrupti aperiam deserunt. Et molestiae nihil deleniti totam omnis.",
+      "photo": "http://placeimg.com/640/480/cats"
+    },
+    {
+      "id": 13322800,
+      "date_start": "Sat Apr 03 2021 16:51:45 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 20:11:57 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "75289563-ca47-eab0-5067-4a27c651567d",
+      "approval_bool": true,
+      "funding_goal": 2501,
+      "funding_raised": 124,
+      "title": "quod est tempore",
+      "description": "Fuga qui doloribus dolor beatae libero et et nisi. Et velit cumque reiciendis non minima quo et dolore. Odio qui omnis eius officiis.",
+      "photo": "http://placeimg.com/640/480/fashion"
+    },
+    {
+      "id": 65856725,
+      "date_start": "Sat Apr 03 2021 20:53:40 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 16:04:27 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "9512db69-6e49-4eaa-4a07-ada452470c1e",
+      "approval_bool": true,
+      "funding_goal": 577,
+      "funding_raised": 2297,
+      "title": "amet repellendus est",
+      "description": "Placeat doloribus nostrum consequatur. Amet et minus eius.",
+      "photo": "http://placeimg.com/640/480/people"
+    },
+    {
+      "id": 64062724,
+      "date_start": "Sat Apr 03 2021 22:25:05 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 21:01:32 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "b1cb8b7f-ff12-ebf5-2714-49e556aa9513",
+      "approval_bool": true,
+      "funding_goal": 2299,
+      "funding_raised": 1801,
+      "title": "omnis corporis ipsam",
+      "description": "Enim optio non libero. Quos eum est veritatis aut quia.",
+      "photo": "http://placeimg.com/640/480/nightlife"
+    },
+    {
+      "id": 75845264,
+      "date_start": "Sat Apr 03 2021 05:12:24 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 20:17:29 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "d8e575f9-3f1a-c4b1-84c5-c56121f16ffa",
+      "approval_bool": true,
+      "funding_goal": 481,
+      "funding_raised": 2028,
+      "title": "eius eum sunt",
+      "description": "Ipsum blanditiis quam similique numquam dolore labore aliquam. Nam recusandae est sequi iure ipsum magnam amet recusandae illum. Ratione veniam iste facere nobis fugit eveniet. Modi vel voluptas quia et. Molestiae ut est aut debitis a assumenda rerum est incidunt.",
+      "photo": "http://placeimg.com/640/480/sports"
+    },
+    {
+      "id": 78133271,
+      "date_start": "Sat Apr 03 2021 16:12:35 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Sun Apr 04 2021 05:41:13 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "aedb9edc-4a47-9068-0bb5-0cbdbbbebca1",
+      "approval_bool": false,
+      "funding_goal": 3918,
+      "funding_raised": 824,
+      "title": "ratione optio quos",
+      "description": "Ut et iure nobis voluptatem dignissimos nulla. Rerum non rerum optio rerum quos deserunt nesciunt. Harum sit sint quidem amet nihil aliquam.",
+      "photo": "http://placeimg.com/640/480/transport"
+    },
+    {
+      "id": 38766323,
+      "date_start": "Sat Apr 03 2021 16:58:42 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Mon Apr 05 2021 00:48:15 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "dde5312e-2c64-8108-7593-2fd925c329a3",
+      "approval_bool": false,
+      "funding_goal": 1697,
+      "funding_raised": 1,
+      "title": "aliquam dolores maxime",
+      "description": "Consectetur accusamus consectetur ipsum aut. Sunt aspernatur autem reiciendis consequatur ipsum. Necessitatibus non aperiam totam fuga repellat nisi consequatur minus. Ut qui excepturi. Consequatur sit est temporibus.",
+      "photo": "http://placeimg.com/640/480/cats"
+    },
+    {
+      "id": 69493349,
+      "date_start": "Sat Apr 03 2021 12:08:20 GMT-0400 (Eastern Daylight Time)",
+      "date_end": "Mon Apr 05 2021 03:28:36 GMT-0400 (Eastern Daylight Time)",
+      "author_id": "9deda6b3-a2ba-eb5b-c591-03ce4b899066",
+      "approval_bool": true,
+      "funding_goal": 3316,
+      "funding_raised": 1306,
+      "title": "amet eum quasi",
+      "description": "Odio autem sit eos numquam possimus natus ipsum. Aut voluptas nisi neque repudiandae ut maxime. Qui eveniet ullam omnis saepe modi neque consequatur. Assumenda labore nostrum facilis fuga tenetur dolor. Fuga qui quia nemo. Ipsa qui quod deserunt et debitis rerum.",
+      "photo": "http://placeimg.com/640/480/transport"
+    },
+    {
+      "id": 22,
+      "date_start": "2021-04-04T17:47:48.200Z",
+      "date_end": "2021-04-08T04:00:00.000Z",
+      "author_id": "377ad657-f6ee-4b60-9572-d9c3a8cf8462",
+      "approval_bool": true,
+      "funding_goal": 70000,
+      "funding_raised": 0,
+      "title": "new campaign",
+      "description": "fjdksalfjdskalfkdsla",
+      "photo": "http://placeimg.com/640/480/people"
+    }
+  ]
+}
