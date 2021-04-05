@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -36,3 +37,43 @@
     transform: rotate(360deg);
   }
 }
+.card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  transform: scale(1.05);
+}
+
+/*
+.image16by9 {
+  padding-top: 56.25% !important;
+}
+.m-collage-image {
+  border-radius: 0.25rem;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.m-collage-image .a-image {
+  position: absolute;
+  top: 0;
+}
+
+.a-image--background {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.a-image {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+*,
+::after ::before {
+  box-sizing: inherit;
+}
+
+*/
