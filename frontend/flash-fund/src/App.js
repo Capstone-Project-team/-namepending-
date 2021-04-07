@@ -2,8 +2,8 @@ import React from "react"
 import { Route, Switch } from "react-router-dom"
 import { BrowserRouter as Router } from "react-router-dom"
 import * as ROUTES from "./routes/routes"
-import Login from "./views/pages/Login"
-import Register from "./views/pages/Register"
+import Login from "./views/pages/_Login"
+import Register from "./views/pages/_Register"
 import Home from "./views/pages/home"
 import Landing from "./views/pages/Landing"
 import Four0Four from "./views/pages/Four0Four"
@@ -24,6 +24,7 @@ import AppHeader from "./views/AppHeader"
 //all pages are wrapped in the AuthProvider to gain access to the auth context from the /context folder
 //Protected routes are only available to logged in users
 function App() {
+  const test = ""
   return (
     <AuthProvider>
       <Router>
