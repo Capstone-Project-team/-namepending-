@@ -10,10 +10,11 @@
 
 On dev branch:
 
-- Go to /frontend/flash-fund folder
+- Go to `/frontend/flash-fund` folder
 - Run `npm run dev`
-- React app will run on localhost:3000
-- Json-Server backend will run on localhost:5000
+- React app will run on `localhost:3000`
+- If port 3000 is not available, add `.env` to `/flash-fund`, and set `PORT=my port`
+- Json-Server backend will run on `localhost:5000`
 
 ## Current Tasklist,
 
