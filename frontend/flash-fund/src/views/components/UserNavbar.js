@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useHistory } from "react-router-dom"
 import { Button, Nav, Navbar } from "react-bootstrap"
 import "../../assets/css/login.css"
@@ -9,12 +9,7 @@ import { logoutUser, useAuthContext } from "../../context"
 //
 const UserNavbar = (props) => {
   const history = useHistory()
-  const [loggedout, setLoggedout] = useState(false)
   const authContext = useAuthContext()
-  if (loggedout) {
-    //history.push("/")
-    //return <Redirect push to="/" />
-  }
   const handleLogout = () => {
     logoutUser(authContext.dispatch)
     //setLoggedout(true)
