@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Redirect, useHistory } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import { Jumbotron } from "react-bootstrap"
 import CampaignList from "../components/CampaignList"
 import { useAuthContext } from "../../context"
@@ -22,7 +22,6 @@ const Landing = () => {
   }, [])
   const [top, setTop] = useState([])
   const authContext = useAuthContext()
-  const history = useHistory()
   //redirect already logged in users
   if (authContext.auth.user.email) {
     return <Redirect to="/home" />

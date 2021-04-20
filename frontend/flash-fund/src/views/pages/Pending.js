@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ApprovalList from "../components/ApprovalList"
 import axios from "axios"
-import cards from "../../fakeData"
 
 const baseUrl = "/api/pending"
 //pending requests for admin to approve or deny

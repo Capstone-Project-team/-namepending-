@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Form, Col, Button, Spinner } from "react-bootstrap"
 import "../../assets/css/login.css"
 import { Formik } from "formik"
-import { Redirect, useHistory } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import axios from "axios"
 import { RegisterSchema } from "../../validation_schemas"
 
