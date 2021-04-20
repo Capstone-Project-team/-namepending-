@@ -11,11 +11,8 @@ import { NewCampaignSchema } from "../../validation_schemas"
 const baseUrl = "/api/campaign"
 
 const NewCampaign = () => {
-  const [state, setState] = useState(false)
-
   //submit new data to db to store the campaign
   const handleCampaign = (creds, { setSubmitting, resetForm }) => {
-    setState(true)
     const submit = async () => {
       try {
         creds = {
@@ -152,7 +149,6 @@ const NewCampaign = () => {
                   "Create Campaign"
                 )}
               </Button>
-              {state && <pre>{JSON.stringify(values, null, 2)}</pre>}
             </Form>
           )}
         </Formik>

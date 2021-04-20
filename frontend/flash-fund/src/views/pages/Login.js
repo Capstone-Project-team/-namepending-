@@ -113,9 +113,6 @@ const Login = (props) => {
                 "Submit"
               )}
             </Button>
-            <div>
-              <pre>{JSON.stringify(values, null, 2)}</pre>
-            </div>
           </Form>
         )}
       </Formik>

@@ -30,7 +30,6 @@ const Landing = () => {
   console.log("top", top)
   return (
     <div>
-      <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>
       <Jumbotron
         style={{
           background: "#FFD700",

@@ -60,7 +60,6 @@ const Home = () => {
   //render a list of campaings, split by pagination if there is enough campaigns
   return (
     <div>
-      <pre>{JSON.stringify(authContext.auth, null, 2)}</pre>
       {button}
       <h1 className="text-center">Campaigns</h1>
       <CampaignList cards={currentPosts} />

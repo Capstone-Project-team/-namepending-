@@ -14,8 +14,6 @@ import cards from "../../fakeData"
 import { useAuthContext } from "../../context"
 import axios from "axios"
 
-const fakeText =
-  "This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action."
 const baseUrl = "/api/campaigns"
 //campaign specific page. Will show after you click on a card
 const CampaignShow = (props) => {
