@@ -7,7 +7,10 @@ const stripe = require("stripe")(
   "sk_test_51IhzY5LCSLA6SrKuQJKgpKUIxJwHglUrlTe938gCn3nhsixQUrpVxjzmE5c9QGxY8qiBnAyMo1dqFfLMzqBPHIEe00z8eq3yVm"
 )
 
+//localhost port that react is running on
 const url = "http://localhost:5001"
+
+//fix cors errors
 let allowCrossDomain = function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "*")
@@ -15,6 +18,8 @@ let allowCrossDomain = function (req, res, next) {
 }
 app.use(allowCrossDomain)
 
+//route that is called when 'donate' button is pressed
+//session id is returned and use by client to redirect to stripe checkout page on their domain
 app.post("/create-checkout-session", async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     customer_email: "customer@example.com",
