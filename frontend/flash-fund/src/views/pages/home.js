@@ -5,10 +5,40 @@ import CampaignList from "../components/CampaignList"
 import { Link } from "react-router-dom"
 import MyPagination from "../components/MyPagination"
 import axios from "axios"
+import { loadStripe } from "@stripe/stripe-js"
+
+const stripePromise = loadStripe(
+  "pk_test_51IhzY5LCSLA6SrKud5O5LM5mUn1zVZTT6rfUKQwpLr6kaSuESX9EwBBD7JjVdneluMQYgHN9D646bMT5r3zxbnZh000lsxPm52"
+)
 
 const baseUrl = "/api/campaigns"
 //home page that displays once user logs in
 const Home = () => {
+  const handleClick = async (event) => {
+    // Get Stripe.js instance
+    const stripe = await stripePromise
+
+    // Call your backend to create the Checkout Session
+    const response = await axios.post("/create-checkout-session", {
+      "access-control-allow-origin": "*",
+    })
+
+    console.log("response", response)
+
+    const session = response.data
+
+    // When the customer clicks on the button, redirect them to Checkout.
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    })
+
+    if (result.error) {
+      console.log(result.error)
+      // If `redirectToCheckout` fails due to a browser or network
+      // error, display the localized error message to your customer
+      // using `result.error.message`.
+    }
+  }
   //state for pagination component
   //cards is all the campaigns loaded from the db
   //card page is the set of cards showing on the pagination page
@@ -61,6 +91,9 @@ const Home = () => {
     <div>
       {button}
       <h1 className="text-center">Campaigns</h1>
+      <button role="link" onClick={handleClick}>
+        Checkout
+      </button>
       <CampaignList cards={currentPosts} />
       <br />
       <MyPagination

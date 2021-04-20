@@ -13,11 +13,40 @@ import handleAmountChange from "../../helpers"
 import { DonationSchema } from "../../validation_schemas"
 import axios from "axios"
 import { Redirect } from "react-router"
+import { loadStripe } from "@stripe/stripe-js"
+
+const stripePromise = loadStripe(
+  "pk_test_51IhzY5LCSLA6SrKud5O5LM5mUn1zVZTT6rfUKQwpLr6kaSuESX9EwBBD7JjVdneluMQYgHN9D646bMT5r3zxbnZh000lsxPm52"
+)
 
 const baseUrl = "/api/campaigns"
 
 //page that accepts donations once the 'donate' button is clicked on a campaign
 const Donate = (props) => {
+  const handleClick = async (event) => {
+    // Get Stripe.js instance
+    const stripe = await stripePromise
+
+    // Call your backend to create the Checkout Session
+    const response = await axios.post("/create-checkout-session", {
+      "access-control-allow-origin": "*",
+    })
+
+    const session = await response.json()
+    console.log(session)
+
+    // When the customer clicks on the button, redirect them to Checkout.
+    const result = await stripe.redirectToCheckout({
+      sessionId: session.id,
+    })
+
+    if (result.error) {
+      console.log(result.error)
+      // If `redirectToCheckout` fails due to a browser or network
+      // error, display the localized error message to your customer
+      // using `result.error.message`.
+    }
+  }
   const [donationRecieved, setDonationRecieved] = useState(false)
   const [redirect, setRedirect] = useState(false)
   const card = props.location.state
@@ -60,7 +89,7 @@ const Donate = (props) => {
           <Card.Body>
             <Formik
               validationSchema={DonationSchema}
-              onSubmit={handleDonation}
+              onSubmit={handleClick}
               initialValues={{
                 donation: "",
               }}
@@ -100,7 +129,7 @@ const Donate = (props) => {
                       </InputGroup>
                     </Form.Group>
                   </Row>
-                  <Button className="w-100" type="submit">
+                  <Button className="w-100" role="link" type="submit">
                     Donate
                   </Button>
                 </Form>
