@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Redirect, useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { Button, Nav, Navbar } from "react-bootstrap"
 import "../../assets/css/login.css"
 import { logoutUser, useAuthContext } from "../../context"

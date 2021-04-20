@@ -2,8 +2,7 @@ import React, { useState } from "react"
 import { Form, Col, Button, Spinner } from "react-bootstrap"
 import "../../assets/css/login.css"
 import { Formik } from "formik"
-import { useAuthContext } from "../../context"
-import { Redirect, useHistory } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import axios from "axios"
 import { RegisterSchema } from "../../validation_schemas"
 
@@ -158,9 +157,6 @@ const Register = () => {
                 "Submit"
               )}
             </Button>
-            <div>
-              <pre>{JSON.stringify(values, null, 2)}</pre>
-            </div>
           </Form>
         )}
       </Formik>
