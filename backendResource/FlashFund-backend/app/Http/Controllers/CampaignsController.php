@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Campaigns;
 
@@ -14,7 +14,9 @@ class CampaignsController extends Controller
      */
     public function index()
     {
-        return Campaigns::all();
+        $results = Campaigns:: where ('approval_status', 'true');
+        $campaigns = $results -> get();
+        return $campaigns;
     }
 
     /**
@@ -29,7 +31,17 @@ class CampaignsController extends Controller
         $request -> validate([
             'Title' => 'required'
         ]);
-        return Campaigns::create($request -> all());
+
+        $campaign = new Campaigns();
+
+        $campaign -> Title = request('Title');
+        $campaign -> Description = request('Description');
+        $campaign -> Donation_Requested = request('Donation_Requested');
+        $campaign -> user_id = Auth::id();
+
+        $campaign -> save();
+        return response('Campaign Added', 200 ) -> 
+        header('Content-Type', 'application/json');
     }
 
     /**

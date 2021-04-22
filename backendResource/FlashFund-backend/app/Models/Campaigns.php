@@ -12,8 +12,13 @@ class Campaigns extends Model
     protected $fillable = [
         'Description',
         'Title',
-        'Donation Requested',
-        'Donation Collected'
+        'Donation_Requested',
+        'approval_status',
+        'Donation_Collected'
     ];
+
+    public function user(){
+        return $this -> belongsTo(User::class, 'user');
+    }
 
 }

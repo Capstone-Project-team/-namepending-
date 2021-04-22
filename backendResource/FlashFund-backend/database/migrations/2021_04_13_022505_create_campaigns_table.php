@@ -15,10 +15,12 @@ class CreateCampaignsTable extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->boolean('approval_status') -> default(false);
             $table->string('Description') -> nullable();
             $table->string('Title');
-            $table->integer('Donation Requested');
-            $table->integer('Donation Collected') -> default(0);
+            $table->integer('Donation_Requested');
+            $table->integer('Donation_Collected') -> default(0);
             $table->timestamps();
         });
     }
