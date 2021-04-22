@@ -1,6 +1,8 @@
 // This example sets up an endpoint using the Express framework.
 // Watch this video to get started: https://youtu.be/rPR2aJ6XnAc.
 
+//to use stripe atm, run react with port 4242 proxy
+
 const express = require("express")
 const app = express()
 const stripe = require("stripe")(

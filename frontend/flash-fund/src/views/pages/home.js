@@ -91,9 +91,6 @@ const Home = () => {
     <div>
       {button}
       <h1 className="text-center">Campaigns</h1>
-      <button role="link" onClick={handleClick}>
-        Checkout
-      </button>
       <CampaignList cards={currentPosts} />
       <br />
       <MyPagination
