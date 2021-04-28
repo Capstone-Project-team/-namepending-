@@ -19,7 +19,6 @@ class CreateCampaignsTable extends Migration
             $table->string('Title');
             $table->integer('Donation Requested');
             $table->integer('Donation Collected') -> default(0);
-            $table->string('created');
             $table->timestamps();
         });
     }
