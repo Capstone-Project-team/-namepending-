@@ -12,6 +12,8 @@ class Campaigns extends Model
         'Description',
         'Title',
         'Donation Requested',
-        'Donation Collected'
+        'Donation Collected',
+        'Approval',
+        'Date_end'
     ];
 }

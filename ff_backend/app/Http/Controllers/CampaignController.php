@@ -28,7 +28,8 @@ class CampaignController extends Controller
     {
         //
         $request -> validate([
-            'Title' => 'required'
+            'Title' => 'required',
+            'Donation Requested' => 'required'
         ]);
         return Campaigns::create($request -> all());
     }
@@ -69,6 +70,6 @@ class CampaignController extends Controller
     public function destroy($id)
     {
         //
-        return Post::destroy($id);
+        return Campaigns::destroy($id);
     }
 }
