@@ -278,6 +278,15 @@
       "password": "admin1",
       "user_id": "7a1935c4-dd30-4c07-84a3-34e2ef97d708",
       "user_type": "admin"
+    },
+    {
+      "id": 31,
+      "first_name": "ian",
+      "last_name": "kusner",
+      "email": "irk@att.net",
+      "password": "kFLiJx6Y73us6PJ",
+      "user_id": "12082767-98a3-41d8-a4b2-1785d050628c",
+      "user_type": "admin"
     }
   ],
   "campaigns": [
@@ -526,7 +535,7 @@
       "date_start": "Sat Apr 03 2021 16:58:42 GMT-0400 (Eastern Daylight Time)",
       "date_end": "Mon Apr 05 2021 00:48:15 GMT-0400 (Eastern Daylight Time)",
       "author_id": "dde5312e-2c64-8108-7593-2fd925c329a3",
-      "approval_bool": false,
+      "approval_bool": true,
       "funding_goal": 1697,
       "funding_raised": 1,
       "title": "aliquam dolores maxime",
@@ -544,6 +553,18 @@
       "title": "amet eum quasi",
       "description": "Odio autem sit eos numquam possimus natus ipsum. Aut voluptas nisi neque repudiandae ut maxime. Qui eveniet ullam omnis saepe modi neque consequatur. Assumenda labore nostrum facilis fuga tenetur dolor. Fuga qui quia nemo. Ipsa qui quod deserunt et debitis rerum.",
       "photo": "http://placeimg.com/640/480/transport"
+    },
+    {
+      "id": 22,
+      "date_start": "2021-04-22T20:45:22.230Z",
+      "date_end": "2021-05-06T04:00:00.000Z",
+      "author_id": "b7681270-1878-41d4-a32d-f1a883c648c0",
+      "approval_bool": true,
+      "funding_goal": 40000,
+      "funding_raised": 0,
+      "title": "funding for my club",
+      "description": "fdjskafjdkljfkldsjfkdlsfkdsaf",
+      "photo": "http://placeimg.com/640/480/food"
     }
   ]
 }
