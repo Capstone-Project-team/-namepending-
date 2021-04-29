@@ -34,6 +34,7 @@ Route::group([
     
 });
 Route::get('/campaigns/top',[CampaignController::class, 'top']);
+Route::get('/campaigns/pending',[CampaignController::class, 'pending']);
 
 Route::apiResource('campaigns', 'App\http\Controllers\CampaignController');
 

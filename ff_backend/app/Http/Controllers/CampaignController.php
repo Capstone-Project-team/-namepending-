@@ -9,6 +9,17 @@ class CampaignController extends Controller
 {
 
     /**
+     * Display a listing of pending resources.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pending()
+    {
+        //  
+         return Campaigns::where('Approval',false);
+
+    }
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -20,7 +31,6 @@ class CampaignController extends Controller
          ->orderBy('Donation Collected')
          ->limit(6)
          ->get();
-         //return Campaigns::all();
 
     }
     /**
