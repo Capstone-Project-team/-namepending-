@@ -31,10 +31,26 @@ class AuthController extends Controller
 
         $password  = request() -> input('password');
         $password  = Hash::make($password);
+        $email = request() -> input('email');
+        $type = 2;
+
+        $allowed = [
+            'kent.edu'
+        ];
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $parts = explode('@', $email);
+
+            $domain = array_pop($parts);
+
+            if (in_array($domain, $allowed)){
+                $type = 1;
+            }
+}
         User::create([
             'name' => request() -> input('name'),
             'email' => request() -> input('email'),
-            'password' => $password
+            'password' => $password,
+            'user_type' => $type
          ]);
         return response('User Added', 200 ) -> 
         header('Content-Type', 'application/json');
@@ -97,7 +113,12 @@ class AuthController extends Controller
      */
     protected function respondWithToken($token)
     {
+        $name = Auth::user()->name;
+        $email = Auth::user()->email;
+        $type = Auth::user()->user_type;
+        $user = ['name'=>$name, 'email'=>$email, 'type'=>$type];
         return response()->json([
+            'user' => $user,
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60

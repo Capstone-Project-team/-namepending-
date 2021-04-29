@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import ApprovalList from "../components/ApprovalList"
 import axios from "axios"
 
-const baseUrl = "/api/pending"
+const baseUrl = "/api/campaigns/pending"
 //pending requests for admin to approve or deny
 const Pending = () => {
   const [pending, setPending] = useState([])
@@ -29,7 +29,9 @@ const Pending = () => {
       const res = axios.delete(`/api/campaigns/${id}`)
       console.log(res.data)
     } else if (e.target.name === "put") {
-      const res = axios.put(`/api/campaigns/${id}`)
+      const res = axios.put(`/api/campaigns/${id}`, {
+        Approval: true,
+      })
       console.log(res.data)
     }
     setPending(pending.filter((card) => card.id !== id))

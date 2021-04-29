@@ -33,7 +33,11 @@ Route::group([
     Route::get('/me', [AuthController::class, 'me']);
     
 });
+Route::get('/campaigns/top',[CampaignController::class, 'top']);
+
 Route::apiResource('campaigns', 'App\http\Controllers\CampaignController');
+
+
 
 Route::post('/stripe',[StripeController::class,'createSession']);
 

@@ -52,6 +52,7 @@ const Home = () => {
       try {
         //send request to register user
         const response = await axios.get(baseUrl)
+        console.log("response", response)
         setPosts(response.data)
       } catch (err) {
         console.log(err)
@@ -72,7 +73,7 @@ const Home = () => {
   //render a 'create campain' button for student users
   //render a 'check campaigns that need approval' button for admins
   let button = null
-  if (authContext.auth.user.userType === "student") {
+  if (authContext.auth.user.userType === "1") {
     button = (
       <Link to="/new-campaign">
         <Button className="mb-3">Create New Campaign</Button>

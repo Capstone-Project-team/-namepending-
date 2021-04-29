@@ -7,6 +7,22 @@ use App\Models\Campaigns;
 
 class CampaignController extends Controller
 {
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function top()
+    {
+        //  
+         return Campaigns::where('Approval',true)
+         ->orderBy('Donation Collected')
+         ->limit(6)
+         ->get();
+         //return Campaigns::all();
+
+    }
     /**
      * Display a listing of the resource.
      *

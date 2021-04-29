@@ -14,6 +14,7 @@ import { DonationSchema } from "../../validation_schemas"
 import axios from "axios"
 import { Redirect } from "react-router"
 import { loadStripe } from "@stripe/stripe-js"
+import { useAuthContext } from "../../context"
 
 const stripePromise = loadStripe(
   "pk_test_51IhzY5LCSLA6SrKud5O5LM5mUn1zVZTT6rfUKQwpLr6kaSuESX9EwBBD7JjVdneluMQYgHN9D646bMT5r3zxbnZh000lsxPm52"
@@ -23,21 +24,29 @@ const baseUrl = "/api/campaigns"
 
 //page that accepts donations once the 'donate' button is clicked on a campaign
 const Donate = (props) => {
+  const { auth } = useAuthContext()
   const handleClick = async (event) => {
+    console.log(event)
     // Get Stripe.js instance
     const stripe = await stripePromise
 
+    const donation = parseInt(event.donation) * 100
+
     // Call your backend to create the Checkout Session
-    const response = await axios.post("/create-checkout-session", {
-      "access-control-allow-origin": "*",
+    const response = await axios.post("/api/stripe", {
+      email: auth.user.email,
+      donation: donation,
+      title: card.Title,
     })
 
-    const session = await response.json()
-    console.log(session)
+    console.log(response)
+
+    const sessionId = response.data.sessionId
+    console.log(sessionId)
 
     // When the customer clicks on the button, redirect them to Checkout.
     const result = await stripe.redirectToCheckout({
-      sessionId: session.id,
+      sessionId: sessionId,
     })
 
     if (result.error) {
@@ -71,8 +80,8 @@ const Donate = (props) => {
   return (
     <>
       <div className="text-center">
-        <h1>{card.title}</h1>
-        <h5>{`$${card.funding_raised} / $${card.funding_goal}`}</h5>
+        <h1>{card.Title}</h1>
+        <h5>{`$${card["Donation Collected"]} / $${card["Donation Requested"]}`}</h5>
       </div>
       {donationRecieved ? (
         <Alert variant="success" className="text-center">

@@ -8,19 +8,21 @@ import axios from "axios"
 import handleAmountChange from "../../helpers"
 import { NewCampaignSchema } from "../../validation_schemas"
 
-const baseUrl = "/api/campaign"
+const baseUrl = "/api/campaigns"
 
 const NewCampaign = () => {
   //submit new data to db to store the campaign
   const handleCampaign = (creds, { setSubmitting, resetForm }) => {
     const submit = async () => {
       try {
-        creds = {
-          ...creds,
-          funding_Goal: parseInt(creds.funding_Goal.replace(/,/g, "")),
+        const myCreds = {
+          Title: creds.name,
+          "Donation Requested": parseInt(creds.funding_Goal.replace(/,/g, "")),
+          Description: creds.fundraiser_description,
+          Date_end: creds.date_End,
         }
         //send request to route to post campaign
-        const response = await axios.post(baseUrl, creds, {
+        const response = await axios.post(baseUrl, myCreds, {
           "access-control-allow-origin": "*",
           "content-type": "application/json",
         })

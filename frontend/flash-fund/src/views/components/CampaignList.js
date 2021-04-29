@@ -23,18 +23,18 @@ const CampaignList = (props) => {
                   (window.location.href = `/campaign/${card.id}`)
                 }
               >
-                <Card.Img variant="top" src={card.photo} />
+                <Card.Img variant="top" src="/kent_seal.png" />
                 <Card.Body>
-                  <Card.Title className="text-center">{card.title}</Card.Title>
+                  <Card.Title className="text-center">{card.Title}</Card.Title>
                   <Card.Text
                     className="overflow-hidden"
                     style={{ maxHeight: "4rem" }}
                   >
-                    {card.description}
+                    {card.Description}
                   </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                  <small className="text-muted">{`Raised $${card.funding_raised} / $${card.funding_goal}`}</small>
+                  <small className="text-muted">{`Raised $${card["Donation Collected"]} / $${card["Donation Requested"]}`}</small>
                 </Card.Footer>
               </Card>
             </Col>

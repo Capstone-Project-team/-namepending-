@@ -16,21 +16,27 @@ class StripeController extends Controller
     public function createSession(Request $request){
         \Stripe\Stripe::setApiKey(env("STRIPE_KEY",'sk_test_51IhzY5LCSLA6SrKuQJKgpKUIxJwHglUrlTe938gCn3nhsixQUrpVxjzmE5c9QGxY8qiBnAyMo1dqFfLMzqBPHIEe00z8eq3yVm'));
 
+        $userEmail = request()->input('email');
+        $donation = request()->input('donation');
+        $title = request()->input('title');
+        $port = env("CLIENT_PORT",3000);
+
         $session = Session::create([
             'payment_method_types' => ['card'],
+            'customer_email' => $userEmail,
             'line_items' => [[
               'price_data' => [
                 'currency' => 'usd',
                 'product_data' => [
-                  'name' => 'T-shirt',
+                  'name' => $title,
                 ],
-                'unit_amount' => 2000,
+                'unit_amount' => $donation,
               ],
               'quantity' => 1,
             ]],
             'mode' => 'payment',
-            'success_url' => 'http://localhost:8000/success.html',
-            'cancel_url' => 'http://localhost:8000/cancel.html',
+            'success_url' => "http://localhost:{$port}/home",
+            'cancel_url' => "http://localhost:{$port}/home",
           ]);
         $result = ['sessionId'=> $session['id']];
         return response()->json($result);
