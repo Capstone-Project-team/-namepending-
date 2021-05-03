@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\StripeController;
+use Stripe\Stripe;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,9 +39,25 @@ Route::get('/campaigns/pending',[CampaignController::class, 'pending']);
 
 Route::apiResource('campaigns', 'App\http\Controllers\CampaignController');
 
+Route::post('/admin', function(Request $request){
+        $password  = request() -> input('password');
+        $password  = Hash::make($password);
+        $type = 3;
+
+        User::create([
+            'name' => request() -> input('name'),
+            'email' => request() -> input('email'),
+            'password' => $password,
+            'user_type' => $type
+         ]);
+        return response('User Added', 200 ) -> 
+        header('Content-Type', 'application/json');
+});
+
 
 
 Route::post('/stripe',[StripeController::class,'createSession']);
+Route::get('/payment-success',[StripeController::class,'paymentSuccess']);
 
 Route::middleware('auth')->get('/user', function (Request $request) {
     return $request->user();

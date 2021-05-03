@@ -37,6 +37,7 @@ const Donate = (props) => {
       email: auth.user.email,
       donation: donation,
       title: card.Title,
+      id: card.id,
     })
 
     console.log(response)
@@ -48,7 +49,6 @@ const Donate = (props) => {
     const result = await stripe.redirectToCheckout({
       sessionId: sessionId,
     })
-
     if (result.error) {
       console.log(result.error)
       // If `redirectToCheckout` fails due to a browser or network

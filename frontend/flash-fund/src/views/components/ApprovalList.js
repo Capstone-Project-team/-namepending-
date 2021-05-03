@@ -39,14 +39,14 @@ const ApprovalList = ({ cards, changePending, loading }) => {
                     transform: "none",
                   }}
                 >
-                  <Card.Img variant="top" src={card.photo} />
+                  <Card.Img variant="top" src="/kent_seal.png" />
                   <Card.Body>
-                    <Card.Title className="text-left">{card.title}</Card.Title>
+                    <Card.Title className="text-left">{card.Title}</Card.Title>
                     <Card.Text
                       className="overflow-auto"
                       style={{ maxHeight: "8rem" }}
                     >
-                      {card.description}
+                      {card.Description}
                     </Card.Text>
                   </Card.Body>
                   <Card.Body className="text-center">

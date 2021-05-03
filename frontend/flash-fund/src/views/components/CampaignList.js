@@ -10,7 +10,7 @@ const CampaignList = (props) => {
         className="p-4"
         style={{
           background: "#242a36",
-          color: "#e3d03b",
+          //color: "#e3d03b",
         }}
       >
         <Row md="3">

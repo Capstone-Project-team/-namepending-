@@ -14,7 +14,7 @@ const Landing = () => {
         //send request to register user
         const response = await axios.get(baseUrl)
         console.log("response", response)
-        setTop(response.data)
+        setTop(response.data.reverse())
       } catch (err) {
         console.log(err)
       }

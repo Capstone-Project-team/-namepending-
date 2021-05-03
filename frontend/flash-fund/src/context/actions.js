@@ -8,6 +8,7 @@ export const loginUser = async (dispatch, payload) => {
 
 export const logoutUser = async (dispatch) => {
   dispatch({ type: "logout" })
+
   localStorage.removeItem("user")
   localStorage.removeItem("token")
   localStorage.removeItem("expired_in")

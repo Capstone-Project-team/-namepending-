@@ -27,12 +27,12 @@ const Pending = () => {
     console.log(e.target.name)
     if (e.target.name === "delete") {
       const res = axios.delete(`/api/campaigns/${id}`)
-      console.log(res.data)
+      console.log(res)
     } else if (e.target.name === "put") {
       const res = axios.put(`/api/campaigns/${id}`, {
         Approval: true,
       })
-      console.log(res.data)
+      console.log(res)
     }
     setPending(pending.filter((card) => card.id !== id))
   }

@@ -16,7 +16,7 @@ class CampaignController extends Controller
     public function pending()
     {
         //  
-         return Campaigns::where('Approval',false);
+         return Campaigns::where('Approval',false)->get();
 
     }
     /**
@@ -27,7 +27,7 @@ class CampaignController extends Controller
     public function top()
     {
         //  
-         return Campaigns::where('Approval',true)
+         return Campaigns::where('Approval',"1")
          ->orderBy('Donation Collected')
          ->limit(6)
          ->get();
@@ -41,7 +41,7 @@ class CampaignController extends Controller
     public function index()
     {
         //       
-         return Campaigns::all();
+         return Campaigns::where('Approval',true)->get();
     }
 
     /**

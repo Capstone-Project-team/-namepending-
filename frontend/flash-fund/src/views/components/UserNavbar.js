@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom"
 import { Button, Nav, Navbar } from "react-bootstrap"
 import "../../assets/css/login.css"
 import { logoutUser, useAuthContext } from "../../context"
+import axios from "axios"
 
 //navbar that will be rendered as a header on each page
 //a logout button or login/register buttons will be conditionally rendered based on whether a user is logged in
@@ -10,11 +11,15 @@ import { logoutUser, useAuthContext } from "../../context"
 const UserNavbar = (props) => {
   const history = useHistory()
   const authContext = useAuthContext()
-  const handleLogout = () => {
-    logoutUser(authContext.dispatch)
-    //setLoggedout(true)
-    history.push("/")
-    //return <Redirect push to="/" />
+  const handleLogout = async () => {
+    try {
+      //const res = await axios.post("/api/auth/logout")
+      //console.log(res)
+      logoutUser(authContext.dispatch)
+      history.push("/")
+    } catch (error) {
+      console.log("error", error)
+    }
   }
   return (
     <Navbar

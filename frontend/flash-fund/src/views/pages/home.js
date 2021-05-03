@@ -49,7 +49,7 @@ const Home = () => {
         <Button className="mb-3">Create New Campaign</Button>
       </Link>
     )
-  } else if (authContext.auth.user.userType === "admin") {
+  } else if (authContext.auth.user.userType === "3") {
     button = (
       <Link to="/pending">
         <Button className="mb-3">Pending Requests</Button>
