@@ -14,6 +14,13 @@ export const useAuthContext = () => {
 export const AuthProvider = ({ children }) => {
   const [auth, dispatch] = useReducer(AuthReducer, initialState)
 
+  const isAuthenticated = () => {
+    if (!auth.token || !auth.expires_in) {
+      return false
+    }
+    return new Date().getTime() / 1000 < auth.expires_in
+  }
+
   return (
     <AuthContext.Provider value={{ auth, dispatch }}>
       {children}

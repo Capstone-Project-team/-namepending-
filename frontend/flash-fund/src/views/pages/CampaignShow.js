@@ -34,7 +34,8 @@ const CampaignShow = (props) => {
     getCard()
   }, [])
 
-  const progress = (card.funding_raised / card.funding_goal) * 100
+  const progress =
+    (card["Donation Collected"] / card["Donation Requested"]) * 100
   console.log(progress)
 
   const timeDiff = (start, end) => {
@@ -46,8 +47,8 @@ const CampaignShow = (props) => {
     return diff_days
   }
 
-  const posted = timeDiff(card.date_start, new Date())
-  const ends = timeDiff(new Date(), card.date_end)
+  const posted = timeDiff(card.created_at, new Date())
+  const ends = timeDiff(new Date(), card.Date_end)
 
   //only logged in user can donate
   //redirect to homepage, (but should display error message)
@@ -73,14 +74,14 @@ const CampaignShow = (props) => {
         className="text-center m-auto"
         style={{ maxWidth: "50rem", boxShadow: "none", transform: "none" }}
       >
-        <Card.Img variant="top" src={card.photo} />
+        <Card.Img variant="top" src="/kent_seal.png" />
         <Card.Body>
-          <Card.Title>{card.title}</Card.Title>
+          <Card.Title>{card.Title}</Card.Title>
           <Card.Text
             style={{ maxHeight: "8rem" }}
             className="overflow-auto text-left"
           >
-            {card.description}
+            {card.Description}
           </Card.Text>
           <Button
             className="w-100"
@@ -96,7 +97,7 @@ const CampaignShow = (props) => {
         <ListGroup className="list-group-flush text-left">
           <ListGroupItem>user</ListGroupItem>
           <ListGroupItem>
-            {`Raised: $${card.funding_raised} / $${card.funding_goal}`}
+            {`Raised: $${card["Donation Collected"]} / $${card["Donation Requested"]}`}
             <ProgressBar now={progress} />
           </ListGroupItem>
         </ListGroup>

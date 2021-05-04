@@ -6,7 +6,7 @@ import axios from "axios"
 import { loginUser, useAuthContext } from "../../context"
 import { LoginSchema } from "../../validation_schemas"
 
-const baseUrl = "/api/login"
+const baseUrl = "/api/auth/login"
 
 //login from page
 const Login = (props) => {
@@ -29,14 +29,19 @@ const Login = (props) => {
         setSubmitting(false)
         console.log(data)
         const payload = {
-          email: data.email,
-          userType: data.user_type,
+          email: data.user.email,
+          userType: data.user.type,
+          token: data.access_token,
+          expires_in: data.expires_in,
         }
+
         //if success
         if (data) {
+          const { token, expires_in, ...user } = payload
           //add to local storage
-          localStorage.setItem("user", JSON.stringify(payload))
-          localStorage.setItem("token", "fakeToken")
+          localStorage.setItem("user", JSON.stringify(user))
+          localStorage.setItem("token", token)
+          localStorage.setItem("expires_in", expires_in)
           //update auth context state
           loginUser(authContext.dispatch, payload)
           //redirect to home page

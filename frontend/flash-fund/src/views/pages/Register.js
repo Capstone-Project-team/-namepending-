@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom"
 import axios from "axios"
 import { RegisterSchema } from "../../validation_schemas"
 
-const baseUrl = "/api/user"
+const baseUrl = "/api/auth/register"
 
 //register form page
 const Register = () => {
@@ -22,17 +22,18 @@ const Register = () => {
   const handleRegister = (creds, { setSubmitting }) => {
     const submit = async () => {
       const { firstname, lastname, email, password } = creds
+      const name = `${firstname} ${lastname}`
       try {
         //send request to register user
         const response = await axios.post(
           baseUrl,
           {
-            firstname,
-            lastname,
+            name,
             email,
             password,
           },
           {
+            Accept: "application/json",
             "content-type": "application/json",
             "access-control-allow-origin": "*",
           }

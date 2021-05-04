@@ -13,7 +13,8 @@ const Landing = () => {
       try {
         //send request to register user
         const response = await axios.get(baseUrl)
-        setTop(response.data)
+        console.log("response", response)
+        setTop(response.data.reverse())
       } catch (err) {
         console.log(err)
       }

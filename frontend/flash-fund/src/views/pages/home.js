@@ -5,40 +5,10 @@ import CampaignList from "../components/CampaignList"
 import { Link } from "react-router-dom"
 import MyPagination from "../components/MyPagination"
 import axios from "axios"
-import { loadStripe } from "@stripe/stripe-js"
-
-const stripePromise = loadStripe(
-  "pk_test_51IhzY5LCSLA6SrKud5O5LM5mUn1zVZTT6rfUKQwpLr6kaSuESX9EwBBD7JjVdneluMQYgHN9D646bMT5r3zxbnZh000lsxPm52"
-)
 
 const baseUrl = "/api/campaigns"
 //home page that displays once user logs in
 const Home = () => {
-  const handleClick = async (event) => {
-    // Get Stripe.js instance
-    const stripe = await stripePromise
-
-    // Call your backend to create the Checkout Session
-    const response = await axios.post("/create-checkout-session", {
-      "access-control-allow-origin": "*",
-    })
-
-    console.log("response", response)
-
-    const session = response.data
-
-    // When the customer clicks on the button, redirect them to Checkout.
-    const result = await stripe.redirectToCheckout({
-      sessionId: session.id,
-    })
-
-    if (result.error) {
-      console.log(result.error)
-      // If `redirectToCheckout` fails due to a browser or network
-      // error, display the localized error message to your customer
-      // using `result.error.message`.
-    }
-  }
   //state for pagination component
   //cards is all the campaigns loaded from the db
   //card page is the set of cards showing on the pagination page
@@ -52,6 +22,7 @@ const Home = () => {
       try {
         //send request to register user
         const response = await axios.get(baseUrl)
+        console.log("response", response)
         setPosts(response.data)
       } catch (err) {
         console.log(err)
@@ -72,13 +43,13 @@ const Home = () => {
   //render a 'create campain' button for student users
   //render a 'check campaigns that need approval' button for admins
   let button = null
-  if (authContext.auth.user.userType === "student") {
+  if (authContext.auth.user.userType === "1") {
     button = (
       <Link to="/new-campaign">
         <Button className="mb-3">Create New Campaign</Button>
       </Link>
     )
-  } else if (authContext.auth.user.userType === "admin") {
+  } else if (authContext.auth.user.userType === "3") {
     button = (
       <Link to="/pending">
         <Button className="mb-3">Pending Requests</Button>
