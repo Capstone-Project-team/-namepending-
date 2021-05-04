@@ -30,7 +30,7 @@ const Donate = (props) => {
     // Get Stripe.js instance
     const stripe = await stripePromise
 
-    const donation = parseInt(event.donation) * 100
+    const donation = parseInt(event.donation.replace(/,/g, "")) * 100
 
     // Call your backend to create the Checkout Session
     const response = await axios.post("/api/stripe", {

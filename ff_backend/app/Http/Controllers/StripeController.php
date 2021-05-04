@@ -37,7 +37,6 @@ class StripeController extends Controller
               'quantity' => 1,
             ]],
             'mode' => 'payment',
-            //'success_url' => route('payment-success',['campaign_id'=>$id, 'dono'=>$donation]),
             'success_url' => url("/api/payment-success?id={$id}&dono={$donation}"),
             'cancel_url' => "http://localhost:{$port}/home",
           ]);
@@ -47,11 +46,9 @@ class StripeController extends Controller
     public function paymentSuccess(Request $request){
       $donation = (int) $request->input('dono') / 100;
       $id = (int) $request->input('id');
-      //return $request;
       $port = env("CLIENT_PORT",3000);
       $campaign = Campaigns::find($id);
       $campaign -> increment('Donation Collected',$donation);
-      //return $campaign;
       return redirect()->to("http://localhost:{$port}/home");
     }
 }

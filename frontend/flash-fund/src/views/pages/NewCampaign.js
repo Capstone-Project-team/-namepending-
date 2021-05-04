@@ -7,10 +7,12 @@ import "react-datepicker/dist/react-datepicker.css"
 import axios from "axios"
 import handleAmountChange from "../../helpers"
 import { NewCampaignSchema } from "../../validation_schemas"
+import { useHistory } from "react-router"
 
 const baseUrl = "/api/campaigns"
 
 const NewCampaign = () => {
+  const history = useHistory()
   //submit new data to db to store the campaign
   const handleCampaign = (creds, { setSubmitting, resetForm }) => {
     const submit = async () => {
@@ -29,7 +31,8 @@ const NewCampaign = () => {
         const data = response.status
         console.log(data)
         setSubmitting(false)
-        resetForm()
+        history.push("/home")
+        //resetForm()
       } catch (error) {
         setSubmitting(false)
       }
